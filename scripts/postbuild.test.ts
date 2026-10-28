@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import type { HistoricalEvent } from '../src/data/schema.ts'
-import { escapeHtml, sceneSharePage, sharePage, shortDescription, sitemap } from './postbuild.ts'
+import { collectionSharePage, escapeHtml, sceneSharePage, sharePage, shortDescription, sitemap } from './postbuild.ts'
 
 const template = readFileSync('index.html', 'utf8')
 
@@ -68,4 +68,10 @@ describe('scene pages', () => {
     expect(sitemap([], '2026-10-19', ['scene/versailles/'])).toContain('<loc>https://maximator13.github.io/france/scene/versailles/</loc>')
   })
 
+  it('writes a share page for the card collection', () => {
+    const page = collectionSharePage(template)
+    expect(page).toContain('<title>Collection de cartes | France</title>')
+    expect(page).toContain('https://maximator13.github.io/france/collection/')
+    expect(page).toContain('href="/france/#/collection"')
+  })
 })

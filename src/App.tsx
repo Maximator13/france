@@ -4,6 +4,7 @@ import { formatDate } from './core/dates.ts'
 import { recordVisit } from './core/explore.ts'
 import { frenchSpacing } from './core/typography.ts'
 import { internalRoute, routeToHash, type Route } from './core/route.ts'
+import { COLLECTION_UI } from './data/collectionUi.ts'
 import { eras } from './data/eras.ts'
 import { events } from './data/events.ts'
 import { pages } from './data/pages.ts'
@@ -23,6 +24,7 @@ import { findScene, isPlayable } from './scenes/registry.ts'
 import { EraCaption, EventPanel, NotFoundPanel, PagePanel, ScenePanel, SceneShortcuts } from './ui/panels.tsx'
 
 const Stage = lazy(() => import('./stage/Stage.tsx'))
+const CollectionPage = lazy(() => import('./collection/CollectionPage.tsx'))
 
 function documentTitle(route: Route): string {
   if (route.name === 'event') {
@@ -37,6 +39,7 @@ function documentTitle(route: Route): string {
     const scene = findScene(route.id)
     if (scene) return `${scene.title} | ${SITE.name}`
   }
+  if (route.name === 'collection') return `${COLLECTION_UI.pageTitle} | ${SITE.name}`
   if (route.name === 'not-found') return `${UI.notFoundTitle} | ${SITE.name}`
   return SITE.title
 }
@@ -190,8 +193,13 @@ export function App() {
   return (
     <>
       <Suspense fallback={null}>
-        <Stage />
+        <Stage paused={route.name === 'collection'} />
       </Suspense>
+      {route.name === 'collection' ? (
+        <Suspense fallback={null}>
+          <CollectionPage />
+        </Suspense>
+      ) : (
         <div className={inScene ? 'app app--scene' : 'app'}>
           <header className="header">
             <h1 className="brand-title">
@@ -201,6 +209,9 @@ export function App() {
               </a>
             </h1>
             <nav className="site-nav" aria-label={UI.footerLabel}>
+              <a className="site-nav__main site-nav__collection" href={routeToHash({ name: 'collection' })}>
+                {COLLECTION_UI.linkLabel}
+              </a>
               <a href={routeToHash({ name: 'learn' })} className="site-nav__main">
                 {LEARN.navLearn}
               </a>
@@ -226,6 +237,7 @@ export function App() {
           </main>
           {!inScene && <Timeline />}
         </div>
+      )}
       <ConsentBanner />
     </>
   )

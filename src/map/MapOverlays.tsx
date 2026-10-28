@@ -3,8 +3,8 @@ import { useFrame, type ThreeEvent } from '@react-three/fiber'
 import { useMemo, useRef } from 'react'
 import { AdditiveBlending, DoubleSide, Vector3, type Group, type Mesh, type MeshBasicMaterial } from 'three'
 import type { Line2 } from 'three-stdlib'
-import displayFontUrl from '@fontsource/bodoni-moda/files/bodoni-moda-latin-500-normal.woff?url'
-import garamondItalicUrl from '@fontsource/eb-garamond/files/eb-garamond-latin-400-italic.woff?url'
+import displayFontUrl from '@fontsource/playfair-display/files/playfair-display-latin-500-normal.woff?url'
+import textItalicUrl from '@fontsource/spectral/files/spectral-latin-400-italic.woff?url'
 import { prefersReducedMotion } from '../core/motion.ts'
 import { cities } from '../data/cities.ts'
 import { events } from '../data/events.ts'
@@ -176,7 +176,7 @@ function SceneGate({ city, scene, height }: { city: City; scene: Scene; height: 
       <Billboard position={[0, -0.5, 0]}>
         <Text
           ref={label}
-          font={garamondItalicUrl}
+          font={textItalicUrl}
           fontSize={0.8}
           color="#ffe7bd"
           outlineWidth={0.06}
@@ -249,7 +249,7 @@ function EventMarker({ height }: { height: HeightSampler }) {
       <Billboard position={[0, 2.1, 0]}>
         <Text
           ref={label}
-          font={garamondItalicUrl}
+          font={textItalicUrl}
           fontSize={1.1}
           color="#ffe3a8"
           outlineWidth={0.06}
@@ -302,7 +302,7 @@ function EventPin({ event, lon, lat, height }: { event: HistoricalEvent; lon: nu
       <Billboard position={[0, -0.35, 0]}>
         <Text
           ref={label}
-          font={garamondItalicUrl}
+          font={textItalicUrl}
           fontSize={0.72}
           maxWidth={9}
           textAlign="center"
@@ -428,7 +428,7 @@ function ItineraryPath({ itinerary, height }: { itinerary: Itinerary; height: He
         <Billboard position={[0, 1.1, 0]}>
           <Text
             ref={label}
-            font={garamondItalicUrl}
+            font={textItalicUrl}
             fontSize={0.9}
             color="#ffd3b4"
             outlineWidth={0.06}

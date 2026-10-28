@@ -74,3 +74,100 @@ Chaque point donne l'hypothèse retenue et ses sources. Tu tranches ; une fois t
 50. **Identifiants Wikidata** : vérifiés par l'API pour les villes (libellé et coordonnées), sauf Waterloo et Studianka, laissés sans identifiant ; aucun identifiant sur les lieux des fiches.
 51. **Importance** : seuls neuf événements restent en importance 1 (baptême de Clovis, Charlemagne, Hugues Capet, Orléans, édit de Nantes, Bastille, sacre, Austerlitz, Waterloo) pour que la vue d'ensemble reste lisible ; à revoir avec toi.
 52. **Angleterre de 1147 à 1168** : Cliopatria compte l'Empire angevin sans l'Angleterre elle-même ; les deux entités sont jointes sur ces années.
+
+
+## Cartes de la collection (28 octobre 2026)
+
+Doutes relevés à la rédaction et à la relecture des 120 cartes ; chaque point donne l'hypothèse retenue et ses sources.
+
+53. Molière (moliere) : le portrait du musée Condé est attribué sur Commons à Pierre Mignard, vers 1658 ; certains catalogues le donnent à Nicolas Mignard. J'ai retenu Pierre Mignard (source : la fiche Commons du Google Art Project).
+54. Canal du Midi : la date retenue est la mise en eau de 1681 (Riquet est mort en octobre 1680). La référence Bergasse (dir.), Le Canal du Midi, Cessenon, 1982 à 1985 vient de ma mémoire : éditeur et années à vérifier.
+55. Gardes françaises : l'échange de politesses à Fontenoy est connu par Voltaire (Précis du siècle de Louis XV) et par d'autres récits ; le texte de la carte signale que les mots exacts sont incertains. L'emplacement 'chapitre XV' est à vérifier.
+56. Hôtel des Invalides : décision de fondation en 1670, édit d'établissement d'avril 1674 et premiers pensionnaires en 1674 ; le dôme est daté de 1706. La source primaire est citée comme 'Édit d'avril 1674'.
+57. Mousquetaires : la création de 1622 et la mort de d'Artagnan devant Maastricht en 1673 sont sûres. Les références modernes (Chagniot, Paris et l'armée au XVIIIe siècle, Economica, 1985) traitent surtout des gardes françaises ; il vaudrait mieux une monographie sur les mousquetaires.
+58. Le Régent : 140,64 carats ; il a été trouvé en Inde vers 1698 et taillé en Angleterre. Son achat en 1717, appuyé par Saint-Simon, figure dans les Mémoires de celui-ci.
+59. Les références bibliographiques modernes (Bluche 1986, Morel 1988, Virol 2003, Hildesheimer 2004, Dessert 2007, Forestier 2018, Pomeau 1995, Antoine 1989, Verlet 1985, Fischer 2011, Duplessy 1988 et 1989, Proust 1962, Niort 2015, Sala-Molins 1987) sont citées de mémoire, sans vérification en ligne de l'éditeur ni de l'année.
+60. Hugues Capet : la carte dit seulement qu'il est élu par les grands réunis à Senlis en 987. Le lieu du sacre (Noyon ou Reims) n'est pas mentionné, car les sources divergent (Richer, Histoires, IV ; Y. Sassier, Hugues Capet, 1987).
+61. Mont-Saint-Michel : le rôle financier de Philippe Auguste dans la construction de la Merveille après l'incendie de 1204 relève surtout de la tradition. La carte ne l'affirme pas, elle date seulement la Merveille vers 1228.
+62. Vase d'Aliénor : la datation du cristal (Perse sassanide, VIe ou VIIe siècle) est l'hypothèse du Louvre et du catalogue Le Trésor de Saint-Denis (1991). La carte dit « sans doute ». L'année de la carte (1137) est celle du mariage, pas celle du montage par Suger.
+63. Sceau de majesté : la photo Commons (Tangopaso, versée dans le domaine public) montre probablement un moulage d'archives, pas la cire d'origine. La fiche le signale.
+64. Statue de Mainneville (illustration de Saint Louis) : on l'identifie à Saint Louis, peut-être avec les traits de Philippe le Bel. C'est une hypothèse et la fiche reste prudente.
+65. Croisés de Jérusalem : on suppose que l'enluminure de Commons « Godefroi1099.jpg » (Gallica btv1b10024631m, 1337, Maître de Fauvel) vient du manuscrit BnF Français 22495. La page Commons ne donne pas la cote, il faut la vérifier.
+66. Chanson de Roland : le renvoi aux laisses 168 à 176 pour la mort de Roland suit la numérotation de l'édition Ian Short. Il peut varier d'une édition à l'autre.
+67. Bicorne de Napoléon : le nombre de chapeaux fournis par le chapelier Poupard (on lit souvent environ 120) et le nombre d'exemplaires conservés (une vingtaine, parfois 19) varient selon les auteurs ; le texte reste prudent ("plusieurs dizaines", "une vingtaine environ"). Sources : Dictionnaire Napoléon (dir. J. Tulard), notices des musées de l'Armée et Condé.
+68. Dépêche de Wellington du 19 juin 1815 : rattachée au tome XII de l'édition Gurwood des Dispatches ; numéro de tome à vérifier sur l'édition consultée.
+69. Garde impériale : l'effectif "plus de 50 000 hommes en 1812" suit l'ordre de grandeur habituel (Lachouque) ; les chiffres varient selon qu'on compte la Jeune Garde et selon les dates.
+70. Grande Armée : "plus de 400 000 hommes passent le Niémen" en 1812 ; les estimations de la première ligne vont d'environ 400 000 à 450 000 selon les auteurs (Tulard, Lentz).
+71. Portrait gravé de Fouché (illustration de joseph-fouche) : auteur inconnu, daté vers 1815 sur Commons, provenance du fichier peu documentée (repris d'une reproduction de presse) ; domaine public certain vu l'âge de l'œuvre, mais l'image pourrait être remplacée par un portrait mieux sourcé si l'on en trouve un en haute définition.
+72. Aquarelle de Longwood attribuée à Louis-Joseph Marchand : lieu de conservation non indiqué sur Commons ; la date "vers 1816 et 1821" est déduite du séjour de Marchand à Sainte-Hélène.
+73. Portrait de Ney par Gérard (vers 1805) : passé en vente chez Christie's en 2013, conservé aujourd'hui en collection particulière selon Commons.
+74. Olympe de Gouges : le pastel retenu (fichier Commons Olympe_de_Gouges.png) est traditionnellement attribué à Alexandre Kucharski et identifié comme son portrait, mais l'attribution et l'identification du modèle sont discutées ; la fiche dit 'Portrait présumé' et 'Attribué à'.
+75. Mirabeau : la réplique du 23 juin 1789 au marquis de Dreux-Brézé ('la force des baïonnettes') est connue en plusieurs versions ; le texte de la carte le dit au conditionnel. Source : Bailly, Mémoires ; Chaussinand-Nogaret, Mirabeau, 1982.
+76. Serment du Jeu de paume : l'image est un détail de la version peinte P67 du musée Carnavalet, donnée à Jacques-Louis David par Paris Musées (CC0) ; datation 'vers 1790 à 1791' et part de l'atelier à vérifier.
+77. Danton : le portrait de Carnavalet est traditionnellement attribué à Constance-Marie Charpentier, vers 1790.
+78. Charlotte Corday : l'image est une reproduction ancienne du portrait de Jean-Jacques Hauer (1793) ; localisation de l'original au musée Lambinet de Versailles retenue d'après la tradition, à vérifier.
+79. Louis XVI : dessin de Joseph Ducreux réalisé fin 1792 ou début 1793 pendant la captivité au Temple selon la tradition ; localisation au musée Carnavalet à vérifier (la page Commons ne cite qu'un site de reproductions).
+80. Prise de la Bastille : aquarelle de Jean-Pierre Houël localisée à la Bibliothèque nationale de France (département des Estampes), à vérifier.
+81. Cocarde tricolore : le port obligatoire pour les hommes est daté de juillet 1792 sans jour précis (décret du 5 ou du 8 juillet 1792 selon les sources) ; pour les femmes, décret du 21 septembre 1793.
+82. Valmy : coordonnées du village de Valmy (49.0817, 4.7658), le moulin étant un peu à l'ouest ; aucun wikidataId ajouté aux nouveaux lieux.
+83. L'id de carte 'louis-xvi' a été retenu pour la personne existante ; s'il entre en collision avec une carte de la période Bourbons, renommer en 'louis-xvi-1793'.
+84. Illustration de bertrand-du-guesclin : la miniature de Jean Fouquet (Gallica btv1b10538041t) est rattachée aux Grandes Chroniques de France (BnF, ms. français 6465 probablement) ; le numéro du manuscrit n'a pas été vérifié, il n'est pas cité dans la fiche.
+85. Illustration de jacques-coeur : toile d'un suiveur de Jean Fouquet passée chez Christie's, date inconnue (portrait posthume probable) ; fiche marquée « date inconnue ».
+86. Illustration de louis-xi : portrait attribué à Jacob de Littemont vers 1470 selon Commons (vente Sotheby's 2012) ; attribution reprise telle quelle.
+87. Illustration de archers-anglais : Commons attribue la miniature de Crécy (BnF, ms. français 2643) à Loyset Liédet, sans date précise ; reprise comme « Attribué à Loyset Liédet », XVe siècle.
+88. Références bibliographiques citées de mémoire, éditeurs ou années à revérifier : Chapelot, Le Château de Vincennes (CNRS Éditions, 1994) ; Cazelles et Rathofer, Les Très Riches Heures du duc de Berry (Lucerne, Faksimile Verlag, 1984) ; Lassabatère, Du Guesclin (Perrin, 2015) ; Chatenet, Chambord (Éditions du patrimoine, 2001) ; Lafaurie, Les Monnaies des rois de France (Bourgey, 1951).
+89. Étymologie du franc (légende Francorum rex ou roi libéré) : la carte présente les deux hypothèses comme débattues.
+90. Donjon de Vincennes : hauteur donnée « environ 50 mètres » (52 m selon les sources courantes) et début des travaux vers 1337 sous Philippe VI.
+91. Chambord : l'inspiration de Léonard de Vinci pour l'escalier à double révolution est présentée comme une tradition sans preuve formelle.
+92. moliere : Commons attribue le portrait de Chantilly à Pierre Mignard (vers 1658) ; certains catalogues le donnent à Nicolas Mignard. J'ai gardé Pierre Mignard, selon la fiche Commons et le Google Art Project.
+93. couronne-de-louis-xv : les sources hésitent sur le créateur (Laurent Rondé selon Wikipédia EN, Claude Rondé dessinateur avec Augustin Duflos selon la Met et le nom du fichier Commons). La fiche garde 'Laurent Rondé et Augustin Duflos' ; à confirmer dans la notice du Louvre.
+94. canal-du-midi : Bergasse (dir.), Le Canal du Midi, 4 vol., Cessenon, 1982 à 1985 me semble réel (cité dans les bibliographies), mais je ne l'ai pas vérifié en ligne.
+95. gardes-francaises : l'anecdote de Fontenoy est placée au chapitre XV du Précis du siècle de Louis XV (de mémoire, chapitre 'Bataille de Fontenoy'). Le texte de la carte en signale déjà le caractère incertain.
+96. mousquetaires-du-roi : la référence Petitfils (Le Véritable d'Artagnan, Tallandier, 1981) est citée de mémoire, sans vérification en ligne.
+97. Autres références modernes non vérifiées en ligne mais plausibles et connues : Bluche 1986, Babelon 1982, Hildesheimer 2004, Forestier 2018, Virol 2003, Pomeau 1995, Antoine 1989, Verlet 1985, Fischer 2011 (Boréal), Morel 1988, Proust 1962, Niort 2015, Sala-Molins 1987.
+98. hotel-des-invalides : décision de fondation en 1670 (ordonnance de février), édit d'établissement d'avril 1674, église du Dôme achevée en 1706 ; ces dates sont cohérentes avec Wikipédia.
+99. bertrand-du-guesclin : la miniature de Fouquet vient de Gallica btv1b10538041t, très probablement les Grandes Chroniques de France, BnF ms. français 6465 ; numéro de manuscrit non cité dans la fiche faute de vérification.
+100. jacques-coeur : portrait en pied d'un suiveur de Fouquet (Christie's), posthume, date inconnue ; licence PD sans ambiguïté, mais la valeur iconographique est faible.
+101. louis-xi : attribution à Jacob de Littemont vers 1470 reprise de Commons et du catalogue Sotheby's 2012.
+102. palais-des-papes : la photo Baldus montre le côté nord ; la tour à flèche à gauche est probablement le clocher de Notre-Dame-des-Doms, d'où une note de fiche volontairement générale.
+103. Références citées de mémoire mais jugées réelles : Chapelot, Le Château de Vincennes (CNRS Éditions, 1994) ; Cazelles et Rathofer (Lucerne, Faksimile Verlag, 1984) ; Lassabatère, Du Guesclin (Perrin, 2015) ; Chatenet, Chambord (Éditions du patrimoine, 2001) ; Lafaurie, Les Monnaies des rois de France (Bourgey, 1951). Éditeurs et années non revérifiés en ligne.
+104. chambord : l'inspiration de Léonard pour l'escalier reste présentée comme une tradition sans preuve formelle ; franc : étymologie présentée comme débattue.
+105. Charlotte Corday: the Commons file is an old reproduction (715x1024, smaller than the 900 px wanted) taken from vimoutiers.net. That the Hauer original is at the musée Lambinet in Versailles is the accepted tradition. Hypothesis kept; sources: Commons, Wikipedia FR 'Jean-Jacques Hauer'.
+106. Olympe de Gouges: the pastel's attribution to Kucharski and the identification of the sitter are disputed; the meta file already says 'présumé' and 'attribué à'. Sources: Commons; Olivier Blanc, 1981.
+107. Mirabeau: Commons and Paris Musées date it 1795, which is after his death in 1791, so it is probably a replica after a Boze portrait from 1789 to 1791. Not checked on the Carnavalet object record.
+108. Louis XVI: the Commons credit points to the musée Carnavalet site, which supports the location given in the meta file. Dating December 1792 to January 1793 according to Commons.
+109. Prise de la Bastille: the Commons file comes from Gallica (BnF, btv1b103025148). The image itself is public domain, but the instruction excludes Gallica 'en direct', and here it came through Commons. Kept.
+110. Tuileries (Bertaux): the Commons scan comes from a Zurich school textbook (2000), so quality is mediocre (2056x1416). The original is believed to be at the château de Versailles (Joconde).
+111. Cocarde: compulsory wear for men is dated to July 1792 (decree of 5 or 8 July depending on the source), and the card text deliberately stays at '1792'. For women, the decree of 21 September 1793 is certain.
+112. Serment du Jeu de paume: Carnavalet P67 is given to David by Paris Musées; the painted version's date and the part played by the workshop are still uncertain (Commons says only '18th century').
+113. Philippe le Bel et Chanson de Roland utilisent deux miniatures différentes du même manuscrit de Fouquet (Grandes Chroniques, BnF Français 6465). Je l'ai accepté, car chaque miniature est une œuvre distincte. Si la règle « une œuvre par carte » vise tout le manuscrit, il faut remplacer l'une des deux, par exemple Roland par le vitrail de Charlemagne à Chartres.
+114. Bernard de Clairvaux : selon la description Commons, la miniature de Jean Colombe (Français 5594, fol. 138) montre Bernard. J'ai supposé qu'il s'agit du moine en habit blanc à gauche, mais la miniature ne porte aucun nom.
+115. Statue de Mainneville (Saint Louis) : on la présente parfois comme portant les traits de Philippe le Bel, sans certitude. La fiche reste prudente.
+116. Sceau de majesté : l'image versée dans le domaine public par Tangopaso a été prise à l'exposition du 800e anniversaire de Saint Louis (2014 à 2015). Il s'agit probablement d'un moulage des Archives nationales, et non de la cire d'origine. La fiche le signale.
+117. Mont-Saint-Michel : le rôle de Philippe Auguste dans le financement de la Merveille relève de la tradition. La carte dit seulement que l'incendie de 1204 est le fait de ses alliés bretons, ce qui est attesté. Elle cite Baldwin, qui traite de la campagne de 1204 mais pas du monument.
+118. Vase d'Aliénor : le cristal serait sassanide, du VIe ou VIIe siècle. C'est l'hypothèse du Louvre, et la carte dit « sans doute ». Le don d'Aliénor à Louis VII lors du mariage est rapporté par Suger dans son De administratione.
+119. Chanson de Roland : la référence aux laisses 168 à 176 suit la numérotation du manuscrit d'Oxford (éd. Short). Elle peut varier d'une édition à l'autre.
+120. Hugues Capet : la carte ne mentionne pas le lieu du sacre (Noyon, selon la tradition, ou Reims), car les sources divergent.
+121. Image de Clovis : Commons attribue la miniature aux Grandes Chroniques de France, BnF ms. français 2610, et la date du XIVe siècle, alors que le style (armures de plates) évoque le XVe ; fiche datée « XIVe ou XVe siècle », cote à vérifier sur Gallica.
+122. Baptême de Clovis : date traditionnelle 496, plusieurs historiens proposent 498 à 508 (Rouche, Clovis, 1996) ; la carte le dit.
+123. Baptistère Saint-Jean de Poitiers : origine datée du IVe ou du Ve siècle selon les auteurs, reconstruction mérovingienne (VIe et VIIe siècles) ; année de carte 650 conventionnelle (Hubert, L'Art préroman).
+124. Cryptes de Jouarre : fondation vers 630 par Adon (dates de 630 à 635 selon les auteurs), sarcophage de Théodechilde attribué à la fin du VIIe siècle ; année 630 retenue.
+125. Sainte Ampoule : le reliquaire du palais du Tau est attribué à l'orfèvre Jean-Charles Cahier, 1823, pour le sacre de Charles X ; attribution reprise de mémoire, à confirmer (Gaborit-Chopin, Regalia, 1987).
+126. Joyeuse : datation des éléments de l'épée du sacre (pommeau Xe ou XIe siècle, quillons XIIe, poignée plus tardive) d'après Gaborit-Chopin, Regalia, 1987 ; année de carte 814 conventionnelle (mort de Charlemagne).
+127. Chapelle palatine : consécration en 805 par Léon III connue seulement par une tradition plus tardive ; la carte dit « vers 805 ».
+128. Manuscrit des serments de Strasbourg (BnF latin 9768) : Commons le date des XIe et XIIe siècles, la BnF de la fin du Xe ; fiche « fin du Xe siècle ». Folio 13 vérifié à l'image (« Pro Deo amur » visible).
+129. Coordonnées des nouveaux lieux (baptistère de Poitiers, Germigny-des-Prés, abbaye de Jouarre) tirées de mémoire à environ 100 m près, sans wikidataId ; à vérifier.
+130. Bicorne : environ 120 chapeaux fournis par Poupard et 19 à 20 conservés selon les auteurs (Dictionnaire Napoléon, dir. Tulard ; notices du musée de l'Armée). Le texte reste prudent ('plusieurs dizaines', 'une vingtaine environ').
+131. Dépêche de Wellington du 19 juin 1815 : l'hypothèse est le tome XII de l'édition Gurwood (1838), qui couvre 1814 et 1815. À confirmer sur l'édition consultée.
+132. Garde impériale, 'plus de 50 000 hommes en 1812' : l'ordre de grandeur courant est d'environ 56 000 (Lachouque ; Dictionnaire Napoléon). Le chiffre varie selon les dates et selon que l'on compte la Jeune Garde.
+133. Grande Armée, 'plus de 400 000 hommes passent le Niémen' : les estimations de la première ligne vont d'environ 400 000 à 450 000 selon les auteurs (Tulard, Lentz).
+134. Aquarelle de Longwood par Marchand : ni date ni lieu de conservation sur Commons. 'Vers 1816 et 1821' est déduit du séjour de Marchand ; il pourrait s'agir d'une réplique plus tardive.
+135. Portrait de Joséphine par Gérard, titre 'château de Fontainebleau' : la fiche Commons (Google Art Project) n'indique pas l'institution. L'hypothèse est la version de Fontainebleau, à confirmer (base Joconde).
+136. Portrait de Fouché (Dubufe d'après Berthon) : Commons date l'œuvre de la première moitié du XIXe siècle sans plus de précision ; c'est une copie d'après Berthon.
+137. Image de Clovis : Commons rattache la miniature au manuscrit BnF fr. 2610 et la date du XIVe siècle (date conventionnelle 1350). Le style des armures et des brigandines suggère plutôt le début du XVe siècle. La fiche reste à « XIVe ou XVe siècle » ; il faudrait vérifier la notice Gallica du fr. 2610.
+138. Serments de Strasbourg, BnF latin 9768 : Commons date le manuscrit de 1000 à 1100, la fiche dit « fin du Xe siècle » d'après la BnF. Il faudrait vérifier la notice BnF Archives et manuscrits.
+139. Germigny-des-Prés : la consécration de 806 repose sur une inscription de dédicace dont l'authenticité est parfois discutée (Heitz 1980 ; notice Mérimée de l'église).
+140. Charles Martel : selon la tradition historiographique (Riché 1983), le surnom n'apparaît qu'au IXe siècle. Le texte dit « n'apparaît qu'au IXe siècle » sans citer la première attestation précise. La bataille est parfois datée de 733.
+141. Chapelle palatine : la consécration par Léon III en 805 n'est connue que par une tradition plus tardive. Le texte dit « vers 805 », c'est acceptable.
+142. Les coordonnées des nouveaux lieux (Poitiers 46.5797/0.3480, Germigny 47.8451/2.2686, Jouarre 48.9262/3.1265) sont cohérentes avec les positions connues à environ 100 m près, sans wikidataId. À contrôler sur Wikidata si l'on veut ajouter les identifiants.
+143. Reliquaire de la Sainte Ampoule : l'attribution à Jean-Charles Cahier, achevé en 1823 pour le sacre de Charles X, est confirmée par Wikipédia FR (article Sainte Ampoule). Elle reste à recouper avec Gaborit-Chopin, Regalia, 1987.

@@ -9,8 +9,8 @@ describe('parseHash', () => {
   })
 
   it('reads event and page routes', () => {
-    expect(parseHash('#/evenement/bataille-de-salamine')).toEqual({ name: 'event', id: 'bataille-de-salamine' })
-    expect(parseHash('#/evenement/bataille-de-salamine/')).toEqual({ name: 'event', id: 'bataille-de-salamine' })
+    expect(parseHash('#/evenement/bataille-d-austerlitz')).toEqual({ name: 'event', id: 'bataille-d-austerlitz' })
+    expect(parseHash('#/evenement/bataille-d-austerlitz/')).toEqual({ name: 'event', id: 'bataille-d-austerlitz' })
     expect(parseHash('#/mentions-legales')).toEqual({ name: 'page', id: 'mentions-legales' })
   })
 
@@ -28,6 +28,9 @@ describe('parseHash', () => {
     expect(parseHash('#/recherche')).toEqual({ name: 'search' })
     expect(routeToHash({ name: 'learn', game: 'ou' })).toBe('#/apprendre/ou')
     expect(routeToHash({ name: 'search' })).toBe('#/recherche')
+    expect(parseHash('#/collection')).toEqual({ name: 'collection' })
+    expect(parseHash('#/collection/x')).toEqual({ name: 'not-found', path: 'collection/x' })
+    expect(routeToHash({ name: 'collection' })).toBe('#/collection')
   })
 
   it('reports anything else as not found', () => {
@@ -47,26 +50,26 @@ describe('routeToHash', () => {
 
 describe('routeFromLocation', () => {
   it('prefers the hash route', () => {
-    expect(routeFromLocation('/hellas/evenement/a/', '#/sources', '/hellas/')).toEqual({ name: 'page', id: 'sources' })
+    expect(routeFromLocation('/france/evenement/a/', '#/sources', '/france/')).toEqual({ name: 'page', id: 'sources' })
   })
 
   it('boots share pages into their event', () => {
-    expect(routeFromLocation('/hellas/evenement/bataille-de-salamine/', '', '/hellas/')).toEqual({
+    expect(routeFromLocation('/france/evenement/bataille-d-austerlitz/', '', '/france/')).toEqual({
       name: 'event',
-      id: 'bataille-de-salamine',
+      id: 'bataille-d-austerlitz',
     })
   })
 
   it('treats the site root as home', () => {
-    expect(routeFromLocation('/hellas/', '', '/hellas/')).toEqual({ name: 'home' })
-    expect(routeFromLocation('/hellas/index.html', '#/', '/hellas/')).toEqual({ name: 'home' })
+    expect(routeFromLocation('/france/', '', '/france/')).toEqual({ name: 'home' })
+    expect(routeFromLocation('/france/index.html', '#/', '/france/')).toEqual({ name: 'home' })
   })
 })
 
 describe('internalRoute', () => {
   it('recognises internal links in both forms and ignores the rest', () => {
-    expect(internalRoute('#/sources', '/hellas/')).toEqual({ name: 'page', id: 'sources' })
-    expect(internalRoute('/hellas/#/evenement/x', '/hellas/')).toEqual({ name: 'event', id: 'x' })
-    expect(internalRoute('https://example.org/', '/hellas/')).toBeNull()
+    expect(internalRoute('#/sources', '/france/')).toEqual({ name: 'page', id: 'sources' })
+    expect(internalRoute('/france/#/evenement/x', '/france/')).toEqual({ name: 'event', id: 'x' })
+    expect(internalRoute('https://example.org/', '/france/')).toBeNull()
   })
 })

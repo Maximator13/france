@@ -2,6 +2,19 @@
 
 Le cahier des charges est dans `docs/BRIEF.md`, le cadrage dans `docs/CADRAGE.md`. Ce fichier garde l'état du projet d'une session à l'autre.
 
+## Après la phase 1 : polices et collection de cartes (28 octobre 2026, à ta demande)
+
+**Fait**
+- Polices changées pour ne plus ressembler à Roma et Hellas, qui partagent EB Garamond : Playfair Display (didone de titrage, graisses 400 et 600, 500 pour les noms de la carte) et Spectral (texte, dessinée par Production Type à Paris, 400, italique et 600). Bodoni Moda et EB Garamond sont retirées.
+- Collection de cartes rétablie, avec le moteur de Hellas : paquet du jour, cinq raretés, doublons changés en écus, fabrication, séries par époque et par type, récompenses d'exploration. Habillage français : sceau et dos de carte à la fleur de lys, frise de losanges, monnaie en écus, type « Œuvre » à la place de « Divinité ».
+- 120 cartes, 20 par période (Mérovingiens et Carolingiens, Capétiens, Valois, Bourbons, Révolution, Empire et épilogue) : 7 légendaires (Clovis, Charlemagne, Saint Louis, Jeanne d'Arc, Louis XIV, Déclaration des droits de l'homme, Napoléon). Chaque carte est sourcée et relue par un second passage indépendant (faits, licences, cadrage). Il y a 31 personnes et 20 lieux de plus.
+- 120 illustrations tirées de Wikimedia Commons (domaine public, CC0, CC BY ou CC BY-SA, aucune NC ni ND), recadrées par `scripts/cards-art.ts` (14,5 Mo, chargées à la demande) ; crédits image par image dans `CREDITS.md`.
+- Rechercher et Apprendre étaient déjà en ligne depuis la phase 1 (menu du haut) ; inchangés.
+
+**Mesures** : 187 tests unitaires ; Playwright vert sur ordinateur et mobile, ouverture d'un paquet comprise ; site publié 29,8 Mo, 320 fichiers.
+
+**À vérifier** : 91 doutes de rédaction ajoutés à `docs/A_VERIFIER.md` (points 53 à 143). Quelques illustrations restent modestes (gardes françaises, mousquetaires, aigle de régiment).
+
 ## Phase 1 : fondations et déploiement (28 octobre 2026, faite en autonomie, en attente de ta validation)
 
 Site en ligne : https://maximator13.github.io/france/ (dépôt https://github.com/Maximator13/france).
@@ -32,13 +45,12 @@ Site en ligne : https://maximator13.github.io/france/ (dépôt https://github.co
 
 **Problèmes connus**
 - Sur la carte, les noms des puissances chevauchent parfois ceux des villes (Poitiers sous « France »).
-- Bodoni Moda n'est servie qu'en graisse 500 ; les titres en 600 sont épaissis par le navigateur. À trancher dans le plan de design.
 - L'ouverture d'une fiche depuis une autre époque laisse parfois la légende de l'ancienne époque pendant l'animation de la frise.
 - Aucune plage de jours dans le modèle de données (18 Brumaire, Bérézina) : la durée est dans le texte.
 - `docs/A_VERIFIER.md` : 52 points, dont 34 venus de la rédaction des fiches.
 
 **Ce que j'attends de toi**
-1. Ouvrir https://maximator13.github.io/france/ et dire si le rendu te plaît (couleurs des époques, Bodoni Moda, carte).
+1. Ouvrir https://maximator13.github.io/france/ et dire si le rendu te plaît (couleurs des époques, polices, carte, collection).
 2. Mesures du HUD sur ton portable, Chrome ou Edge en plein écran : https://maximator13.github.io/france/?debug, noter i/s, durée d'image, appels de dessin et qualité, à l'arrivée et en faisant glisser la frise.
 3. Relire `docs/A_VERIFIER.md` quand tu veux.
 4. Search Console : ajouter une propriété « Préfixe d'URL » pour `https://maximator13.github.io/france/` (validation par fichier HTML, donne-moi le nom du fichier), puis déclarer `sitemap.xml`.

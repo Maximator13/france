@@ -1,6 +1,12 @@
 import type { Place } from './schema.ts'
 import { places as royaume } from './places-royaume.ts'
 import { places as empire } from './places-empire.ts'
+import { places as hautMoyenAgeCards } from './places-cartes-haut-moyen-age.ts'
+import { places as capetiensCards } from './places-cartes-capetiens.ts'
+import { places as valoisCards } from './places-cartes-valois.ts'
+import { places as bourbonsCards } from './places-cartes-bourbons.ts'
+import { places as revolutionCards } from './places-cartes-revolution.ts'
+import { places as empireCards } from './places-cartes-empire.ts'
 
 const core: Place[] = [
   {
@@ -34,4 +40,4 @@ const core: Place[] = [
   }
 ]
 
-export const places: Place[] = [...core, ...royaume, ...empire]
+export const places: Place[] = [...core, ...royaume, ...empire, ...hautMoyenAgeCards, ...capetiensCards, ...valoisCards, ...bourbonsCards, ...revolutionCards, ...empireCards]

@@ -1,6 +1,12 @@
 import type { Person } from './schema.ts'
 import { people as royaume } from './people-royaume.ts'
 import { people as empire } from './people-empire.ts'
+import { people as hautMoyenAgeCards } from './people-cartes-haut-moyen-age.ts'
+import { people as capetiensCards } from './people-cartes-capetiens.ts'
+import { people as valoisCards } from './people-cartes-valois.ts'
+import { people as bourbonsCards } from './people-cartes-bourbons.ts'
+import { people as revolutionCards } from './people-cartes-revolution.ts'
+import { people as empireCards } from './people-cartes-empire.ts'
 
 const core: Person[] = [
   {
@@ -29,4 +35,4 @@ const core: Person[] = [
   }
 ]
 
-export const people: Person[] = [...core, ...royaume, ...empire]
+export const people: Person[] = [...core, ...royaume, ...empire, ...hautMoyenAgeCards, ...capetiensCards, ...valoisCards, ...bourbonsCards, ...revolutionCards, ...empireCards]

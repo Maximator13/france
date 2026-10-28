@@ -98,7 +98,7 @@ La carte montre le royaume des Francs, puis le royaume de France avec ses grands
 
 ## Crédits
 
-- Polices : EB Garamond (Georg Duffner et Octavio Pardo) et Bodoni Moda (Owen Earl), sous licence SIL Open Font License 1.1.
+- Polices : Spectral (Production Type) et Playfair Display (Claus Eggers Sørensen), sous licence SIL Open Font License 1.1.
 - Bibliothèques : React, three.js, React Three Fiber, drei, troika-three-text, meshoptimizer, Zustand et marked (licence MIT), postprocessing (licence zlib), N8AO (licence ISC), Basis Universal (licence Apache 2.0), GSAP (licence gratuite propre à Webflow).
 - Relief et fonds marins : NOAA NCEI, ETOPO 2022 (CC0 1.0), [doi:10.25921/fd45-gt74](https://doi.org/10.25921/fd45-gt74).
 - Traits de côte et lacs : Made with Natural Earth (domaine public).
