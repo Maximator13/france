@@ -185,6 +185,14 @@ Inventaire fait sur le code de Roma (et l'écart déjà mesuré par Hellas) :
 6. **Dépôt GitHub** : créer `Maximator13/france` public maintenant, ou au début de la phase 1 (recommandé : au début de la phase 1).
 7. **Site racine** : ajouter France à la page d'accueil et au `robots.txt` de `maximator13.github.io`, comme pour Hellas (recommandé : oui, en fin de phase 1).
 
+**Décisions prises le 27 octobre 2026** : toutes les recommandations ci-dessus (B avec épilogue jusqu'en 1821, Nouvelle-France et royaume d'Italie, relief A puis B, rien de reproduit depuis Gallica, Bodoni Moda, dépôt créé au début de la phase 1, site racine mis à jour en fin de phase 1).
+
+Écarts pendant la phase 1 :
+- les rangées repliées « Coalitions » et « États satellites » n'ont pas été codées : la frise de Hellas attribue déjà ses quatre rangées secondaires aux pistes qui ont le plus d'événements à l'écran, et les coalitions, qui se suivent sans se chevaucher, partagent une rangée ;
+- le royaume est tracé avec ses grands fiefs ; le domaine royal en couleur pleine dans la mouvance hachurée est reporté en phase 2 ;
+- la collection de cartes de Hellas est retirée jusqu'à la phase 3 ;
+- `endDate` (plages de jours) n'est pas ajouté : les fiches du 18 Brumaire et de la Bérézina donnent la durée dans leur texte.
+
 ## 9. Plan de la phase 1 : fondations et déploiement
 
 | # | Étape | Taille |
