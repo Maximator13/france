@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { MAX_DISTANCE, MIN_DISTANCE, approach, approachGoal, fitDistance, frameAt, goalForBounds, goalForPlace } from './camera.ts'
-import { activeSlices, sliceKey, type TerritorySlice } from './territories.ts'
+import { activeSlices, calendarTime, isActiveAt, sliceKey, type TerritorySlice } from './territories.ts'
 
 const slice = (track: TerritorySlice['track'], from: number, to: number, bounds: TerritorySlice['bounds']): TerritorySlice => ({
   track,
@@ -23,6 +23,19 @@ describe('territory slices', () => {
     expect(activeSlices([persia, athens, thebes], 1830)).toEqual([])
   })
 
+  it('reads a slice over whole calendar years unless it carries exact start and end times', () => {
+    const holland = { ...thebes, track: 'hollande' as const, from: 1809, to: 1810, end: 1810.52 }
+    const enlarged = { ...persia, from: 1810, to: 1810, start: 1810.52, end: 1810.95 }
+    expect(isActiveAt(holland, 1810.5)).toBe(true)
+    expect(isActiveAt(holland, 1810.6)).toBe(false)
+    expect(isActiveAt(enlarged, 1810.6)).toBe(true)
+    expect(isActiveAt(enlarged, 1810.96)).toBe(false)
+    expect(isActiveAt(athens, 1813.99)).toBe(true)
+    expect(isActiveAt(athens, 1814)).toBe(false)
+    expect(calendarTime(1810)).toBe(1810.5)
+    expect(sliceKey([enlarged])).toBe('royaume:1810.52')
+  })
+
   it('identifies a set of slices so transitions start only on change', () => {
     expect(sliceKey([athens, thebes])).toBe('rhin:1806|westphalie:1807')
     expect(sliceKey(activeSlices([persia], 1710))).toBe(sliceKey(activeSlices([persia], 1720)))
@@ -33,8 +46,8 @@ describe('camera frames', () => {
   it('frames France, then Europe, Egypt and Russia under the Revolution and the Empire', () => {
     expect(frameAt(1500)).toEqual([-5.5, 41, 10, 51.5])
     expect(frameAt(1795)[0]).toBe(-10)
-    expect(frameAt(1799)[1]).toBe(27.5)
-    expect(frameAt(1812)[2]).toBe(40)
+    expect(frameAt(1799)[1]).toBe(25)
+    expect(frameAt(1812)[2]).toBe(39)
     expect(frameAt(1815)).toEqual([-5.5, 41, 10, 51.5])
   })
 })

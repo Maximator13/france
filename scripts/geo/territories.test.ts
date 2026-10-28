@@ -4,20 +4,27 @@ import { tracks } from '../../src/data/tracks.ts'
 import { MAP_BOUNDS } from '../../src/map/geo.ts'
 import {
   HAND_DRAWN_FILE,
+  HANSEATIC_ANNEXED,
+  HOLLAND_ANNEXED,
   SIZE_TARGET,
   TERRITORIES_FILE,
   byTrackThenStart,
   handDrawnSchema,
+  labelBox,
+  placeLabel,
   planHandDrawn,
   cleanRing,
   mergedRuns,
   planTrack,
+  sourceRows,
   territoriesSchema,
   toAstronomical,
   uncoveredYears,
+  withAnnexations,
   withBridgedGaps,
+  wrapLines,
 } from './territories.ts'
-import type { Row, Slice } from './territories.ts'
+import type { Plan, Row, Slice } from './territories.ts'
 
 const text = readFileSync(TERRITORIES_FILE, 'utf8')
 const { attribution, slices } = territoriesSchema.parse(JSON.parse(text))
@@ -169,7 +176,8 @@ describe('territories file', () => {
       const previous = slices[index - 1]
       if (previous) expect(byTrackThenStart(previous, slice), `${slice.track} ${slice.from}`).toBeLessThanOrEqual(0)
       const twins = slices.filter((other) => other !== slice && other.track === slice.track && other.polity === slice.polity)
-      expect(twins.some((other) => other.from <= slice.to && slice.from <= other.to), `${slice.track} ${slice.polity} ${slice.from}`).toBe(false)
+      const overlapping = twins.some((other) => (other.start ?? other.from) < (slice.end ?? slice.to + 1) && (slice.start ?? slice.from) < (other.end ?? other.to + 1))
+      expect(overlapping, `${slice.track} ${slice.polity} ${slice.from}`).toBe(false)
     })
   })
 
@@ -194,5 +202,105 @@ describe('territories file', () => {
       }
       expect(slice.label[0] >= west && slice.label[0] <= east && slice.label[1] >= south && slice.label[1] <= north).toBe(true)
     }
+  })
+})
+
+const insideRing = ([lon, lat]: [number, number], ring: [number, number][]) => {
+  let inside = false
+  for (let index = 0, previous = ring.length - 1; index < ring.length; previous = index++) {
+    const [x0, y0] = ring[index]!
+    const [x1, y1] = ring[previous]!
+    if (y0 > lat !== y1 > lat && lon < ((x1 - x0) * (lat - y0)) / (y1 - y0) + x0) inside = !inside
+  }
+  return inside
+}
+
+const tracksAt = (time: number, point: [number, number]) =>
+  slices
+    .filter((slice) => time >= (slice.start ?? slice.from) && time < (slice.end ?? slice.to + 1))
+    .filter((slice) => slice.polygons.some((polygon) => polygon.filter((ring) => insideRing(point, ring)).length % 2 === 1))
+    .map((slice) => slice.track)
+
+describe('Napoleonic map corrections', () => {
+  it('annexes Holland in July 1810 and the Hanseatic towns in December 1810', () => {
+    const amsterdam: [number, number] = [4.9, 52.37]
+    const hamburg: [number, number] = [9.99, 53.55]
+    expect(tracksAt(1810.4, amsterdam)).toEqual(['hollande'])
+    expect(tracksAt(HOLLAND_ANNEXED + 0.01, amsterdam)).toEqual(['royaume'])
+    expect(tracksAt(HOLLAND_ANNEXED + 0.01, hamburg)).toEqual([])
+    expect(tracksAt(HANSEATIC_ANNEXED + 0.01, hamburg)).toEqual(['royaume'])
+    expect(tracksAt(1811.5, [10.69, 53.87])).toEqual(['royaume'])
+  })
+
+  it('keeps occupied countries out of the Empire and adds Catalonia in 1812', () => {
+    const occupied: [number, number][] = [[16.37, 48.21], [13.4, 52.52], [37.62, 55.75], [-3.7, 40.42], [-8.61, 41.15]]
+    for (const time of [1806.5, 1808.5, 1810.2, 1811.5, 1812.5]) {
+      for (const point of occupied) expect(tracksAt(time, point), `${time} ${point.join(',')}`).not.toContain('royaume')
+    }
+    expect(tracksAt(1811.5, [2.25, 41.93])).toEqual(['espagne'])
+    expect(tracksAt(1812.5, [2.25, 41.93])).toEqual(['royaume'])
+  })
+
+  it('draws the Confederation of the Rhine over southern and central Germany', () => {
+    const members: [number, number][] = [[11.58, 48.14], [9.18, 48.78], [13.74, 51.05]]
+    for (const member of members) expect(tracksAt(1808.5, member), member.join(',')).toContain('rhin')
+    expect(tracksAt(1808.5, [20.5, 54.7])).not.toContain('rhin')
+  })
+
+  it('shows France whole in 1814', () => {
+    expect(tracksAt(1814.5, [5.4, 48.6])).toEqual(['royaume'])
+  })
+})
+
+describe('Napoleonic slice planning', () => {
+  const other: Row['geometry'] = { type: 'Polygon', coordinates: [[[5, 5], [6, 5], [6, 6], [5, 5]]] }
+
+  it('borrows the geometry of a chosen year and tags the rows with their cut', () => {
+    const rows: Row[] = [
+      { polity: 'Kingdom of Spain', from: 1803, to: 1808, geometry: square },
+      { polity: 'Kingdom of Spain', from: 1809, to: 1810, geometry: other },
+    ]
+    const cut = { name: 'test' }
+    const result = sourceRows(rows, { polity: 'Kingdom of Spain', track: 'espagne', from: 1808, to: 1810, shape: { polity: 'Kingdom of Spain', year: 1808 }, cut })
+    expect(result.map((part) => [part.from, part.to, part.geometry === square, part.cut === cut])).toEqual([
+      [1808, 1808, true, true],
+      [1809, 1810, true, true],
+    ])
+  })
+
+  it('cuts the 1810 slices at the dates of the annexations', () => {
+    const plan = (track: Plan['track'], from: number, to: number): Plan => ({ track, polity: track, from, to, rows: [row(track, from, to)] })
+    const result = withAnnexations([plan('royaume', 1809, 1810), plan('royaume', 1811, 1811), plan('hollande', 1809, 1810)])
+    expect(result.map(({ track, from, start, end, rows }) => [track, from, start, end, rows.length])).toEqual([
+      ['royaume', 1809, undefined, HOLLAND_ANNEXED, 1],
+      ['royaume', 1811, undefined, undefined, 1],
+      ['hollande', 1809, undefined, HOLLAND_ANNEXED, 1],
+      ['royaume', 1810, HOLLAND_ANNEXED, HANSEATIC_ANNEXED, 2],
+      ['royaume', 1810, HANSEATIC_ANNEXED, 1811, 1],
+    ])
+  })
+
+  it('joins a dated slice with the identical next one and keeps the later end', () => {
+    const base: Slice = { track: 'royaume', polity: 'Empire', from: 1810, to: 1810, start: 1810.95, end: 1811, bounds: [0, 0, 1, 1], label: [0.5, 0.5], polygons: [] }
+    const next: Slice = { track: 'royaume', polity: 'Empire', from: 1811, to: 1811, bounds: [0, 0, 1, 1], label: [0.5, 0.5], polygons: [] }
+    const [merged, ...rest] = mergedRuns([base, next])
+    expect(rest).toEqual([])
+    expect([merged?.start, merged?.to, merged?.end]).toEqual([1810.95, 1811, undefined])
+  })
+})
+
+describe('territory labels', () => {
+  it('wraps long names on lines of thirteen characters', () => {
+    expect(wrapLines('ESPAGNE DE JOSEPH BONAPARTE')).toEqual(['ESPAGNE DE', 'JOSEPH', 'BONAPARTE'])
+    expect(wrapLines('FRANCE')).toEqual(['FRANCE'])
+  })
+
+  it('moves a label off a city name while staying inside its territory', () => {
+    const polygons: [number, number][][][] = [[[[-4, 43], [8, 43], [8, 51], [-4, 51], [-4, 43]]]]
+    const poitiers: [number, number, number, number] = [-0.5, 46.4, 1.2, 47.4]
+    const label = placeLabel(polygons, [0.3, 46.8], { text: 'FRANCE', obstacles: [poitiers], scale: 1, frame: [-5, 41, 10, 52] })
+    const box = labelBox(label, 'FRANCE', 1)
+    expect(box[2] <= poitiers[0] || box[0] >= poitiers[2] || box[3] <= poitiers[1] || box[1] >= poitiers[3]).toBe(true)
+    expect(label[0] > -4 && label[0] < 8 && label[1] > 43 && label[1] < 51).toBe(true)
   })
 })

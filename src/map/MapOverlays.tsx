@@ -1,7 +1,7 @@
 import { Billboard, Line, Text } from '@react-three/drei'
 import { useFrame, type ThreeEvent } from '@react-three/fiber'
-import { useMemo, useRef } from 'react'
-import { AdditiveBlending, DoubleSide, Vector3, type Group, type Mesh, type MeshBasicMaterial } from 'three'
+import { useEffect, useMemo, useRef } from 'react'
+import { AdditiveBlending, DoubleSide, Vector3, type Group, type Mesh, type MeshBasicMaterial, type Object3D } from 'three'
 import type { Line2 } from 'three-stdlib'
 import displayFontUrl from '@fontsource/playfair-display/files/playfair-display-latin-500-normal.woff?url'
 import textItalicUrl from '@fontsource/spectral/files/spectral-latin-400-italic.woff?url'
@@ -16,12 +16,18 @@ import { findScene, isPlayable } from '../scenes/registry.ts'
 import { isVisibleAt } from '../timeline/layout.ts'
 import { navigate, useApp } from '../store.ts'
 import { project } from './geo.ts'
+import { isItineraryShown, waypointTime } from './itinerary.ts'
+import { claimLabel, isLabelHidden, LABEL_PRIORITY, releaseLabel, settleLabels } from './labelSpace.ts'
+import type { UiInsets } from './MapStage.tsx'
 import type { HeightSampler } from './reliefSampler.ts'
+import { calendarTime } from './territories.ts'
 
 const LABEL_SCALE = 0.016
 const FADE_SECONDS = 0.6
 const LIFT = 0.03
 const PATH_STEPS_PER_LEG = 24
+
+type LabelText = Object3D & { text: string; fillOpacity: number; outlineOpacity: number; sync: () => void }
 
 function pointOnMap(lon: number, lat: number, height: HeightSampler): Vector3 {
   const point = project(lon, lat)
@@ -42,25 +48,32 @@ function fade(current: number, target: number, delta: number, reducedMotion: boo
 
 function CityLabel({ city, height }: { city: City; height: HeightSampler }) {
   const group = useRef<Group>(null)
-  const label = useRef<{ fillOpacity: number; outlineOpacity: number } | null>(null)
+  const label = useRef<LabelText>(null)
   const dot = useRef<Mesh>(null)
   const opacity = useRef(0)
+  const textOpacity = useRef(0)
   const position = useMemo(() => pointOnMap(city.lon, city.lat, height), [city, height])
   const reducedMotion = useMemo(() => prefersReducedMotion(), [])
+  const id = `city:${city.id}`
 
-  useFrame(({ camera }, delta) => {
+  useEffect(() => () => releaseLabel(id), [id])
+
+  useFrame(({ camera, size }, delta) => {
     const year = useApp.getState().view.center
     const distance = camera.position.distanceTo(position)
-    const alive = year >= city.from && year <= (city.to ?? Infinity)
+    const alive = Math.round(year) >= city.from && Math.round(year) <= (city.to ?? Infinity)
     const target = alive && city.importance <= importanceLimit(distance) ? 1 : 0
+    if (target > 0) claimLabel(id, city.importance === 1 ? LABEL_PRIORITY.majorCity : LABEL_PRIORITY.city, label.current, camera, size.width, size.height)
+    else releaseLabel(id)
     opacity.current = fade(opacity.current, target, delta, reducedMotion)
+    textOpacity.current = fade(textOpacity.current, target > 0 && !isLabelHidden(id) ? 1 : 0, delta, reducedMotion)
     const current = group.current
     if (!current) return
     current.visible = opacity.current > 0.01
     current.scale.setScalar(distance * LABEL_SCALE)
     if (label.current) {
-      label.current.fillOpacity = opacity.current
-      label.current.outlineOpacity = opacity.current * 0.8
+      label.current.fillOpacity = textOpacity.current
+      label.current.outlineOpacity = textOpacity.current * 0.8
     }
     if (dot.current) (dot.current.material as MeshBasicMaterial).opacity = opacity.current
   })
@@ -128,7 +141,7 @@ function SceneGate({ city, scene, height }: { city: City; scene: Scene; height: 
 
   useFrame(({ camera, clock }, delta) => {
     const { view, route } = useApp.getState()
-    const alive = view.center >= city.from && view.center <= (city.to ?? Infinity)
+    const alive = Math.round(view.center) >= city.from && Math.round(view.center) <= (city.to ?? Infinity)
     opacity.current = fade(opacity.current, alive && route.name !== 'scene' ? 1 : 0, delta, reducedMotion)
     emphasis.current = fade(emphasis.current, hovered.current ? 1 : 0, delta * 3, reducedMotion)
     const current = group.current
@@ -205,17 +218,21 @@ function EventMarker({ height }: { height: HeightSampler }) {
   const group = useRef<Group>(null)
   const ring = useRef<Mesh>(null)
   const halo = useRef<Mesh>(null)
-  const label = useRef<{ text: string; fillOpacity: number; outlineOpacity: number; sync: () => void } | null>(null)
+  const label = useRef<LabelText>(null)
   const shown = useRef('')
   const opacity = useRef(0)
   const reducedMotion = useMemo(() => prefersReducedMotion(), [])
 
-  useFrame(({ camera, clock }, delta) => {
+  useEffect(() => () => releaseLabel('selected'), [])
+
+  useFrame(({ camera, clock, size }, delta) => {
     const current = group.current
     if (!current) return
     const selection = selectedEventPlace()
     opacity.current = fade(opacity.current, selection ? 1 : 0, delta, reducedMotion)
     current.visible = opacity.current > 0.01
+    if (selection) claimLabel('selected', LABEL_PRIORITY.selected, label.current, camera, size.width, size.height)
+    else releaseLabel('selected')
     if (!selection) return
     const position = pointOnMap(selection.place.lon, selection.place.lat, height)
     current.position.copy(position)
@@ -270,25 +287,32 @@ const PIN_WINDOW = 0.07
 
 function EventPin({ event, lon, lat, height }: { event: HistoricalEvent; lon: number; lat: number; height: HeightSampler }) {
   const group = useRef<Group>(null)
-  const label = useRef<{ fillOpacity: number; outlineOpacity: number } | null>(null)
+  const label = useRef<LabelText>(null)
   const pin = useRef<Mesh>(null)
   const opacity = useRef(0)
+  const textOpacity = useRef(0)
   const position = useMemo(() => pointOnMap(lon, lat, height), [lon, lat, height])
   const reducedMotion = useMemo(() => prefersReducedMotion(), [])
+  const id = `pin:${event.id}`
 
-  useFrame(({ camera }, delta) => {
+  useEffect(() => () => releaseLabel(id), [id])
+
+  useFrame(({ camera, size }, delta) => {
     const { view, route } = useApp.getState()
     const selected = route.name === 'event' && route.id === event.id
     const near = Math.abs(event.start - view.center) <= Math.max(3, view.span * PIN_WINDOW)
     const target = !selected && near && isVisibleAt(event.importance, view.span) ? 1 : 0
+    if (target > 0) claimLabel(id, LABEL_PRIORITY.pin, label.current, camera, size.width, size.height)
+    else releaseLabel(id)
     opacity.current = fade(opacity.current, target, delta, reducedMotion)
+    textOpacity.current = fade(textOpacity.current, target > 0 && !isLabelHidden(id) ? 1 : 0, delta, reducedMotion)
     const current = group.current
     if (!current) return
     current.visible = opacity.current > 0.01
     current.scale.setScalar(camera.position.distanceTo(position) * LABEL_SCALE)
     if (label.current) {
-      label.current.fillOpacity = opacity.current
-      label.current.outlineOpacity = opacity.current * 0.8
+      label.current.fillOpacity = textOpacity.current
+      label.current.outlineOpacity = textOpacity.current * 0.8
     }
     if (pin.current) (pin.current.material as MeshBasicMaterial).opacity = opacity.current
   })
@@ -339,10 +363,6 @@ function EventPins({ height }: { height: HeightSampler }) {
   )
 }
 
-function waypointTime(waypoint: Itinerary['waypoints'][number]): number {
-  return waypoint.year + ((waypoint.month ?? 6) - 0.5) / 12
-}
-
 function densePath(itinerary: Itinerary, height: HeightSampler): { points: Vector3[]; times: number[] } {
   const points: Vector3[] = []
   const times: number[] = []
@@ -367,17 +387,20 @@ function ItineraryPath({ itinerary, height }: { itinerary: Itinerary; height: He
   const line = useRef<Line2>(null)
   const ghost = useRef<Line2>(null)
   const head = useRef<Mesh>(null)
-  const label = useRef<{ text: string; fillOpacity: number; outlineOpacity: number; sync: () => void } | null>(null)
+  const label = useRef<LabelText>(null)
   const labelGroup = useRef<Group>(null)
   const shown = useRef('')
   const opacity = useRef(0)
   const reducedMotion = useMemo(() => prefersReducedMotion(), [])
   const start = waypointTime(itinerary.waypoints[0]!)
   const end = waypointTime(itinerary.waypoints.at(-1)!)
+  const id = `itinerary:${itinerary.id}`
 
-  useFrame(({ camera, clock }, delta) => {
-    const year = useApp.getState().view.center + 0.5
-    const active = year >= start - 1.5 && year <= end + 1.5
+  useEffect(() => () => releaseLabel(id), [id])
+
+  useFrame(({ camera, clock, size }, delta) => {
+    const year = calendarTime(useApp.getState().view.center)
+    const active = isItineraryShown(start, end, year)
     opacity.current = fade(opacity.current, active ? 1 : 0, delta, reducedMotion)
     const reached = path.times.findLastIndex((time) => time <= year)
     const segments = Math.max(0, reached)
@@ -399,6 +422,8 @@ function ItineraryPath({ itinerary, height }: { itinerary: Itinerary; height: He
       ;(head.current.material as MeshBasicMaterial).opacity = opacity.current
     }
     const lastWaypoint = itinerary.waypoints.filter((waypoint) => waypointTime(waypoint) <= year && waypoint.label).at(-1)
+    if (active && lastWaypoint) claimLabel(id, LABEL_PRIORITY.itinerary, label.current, camera, size.width, size.height)
+    else releaseLabel(id)
     if (labelGroup.current && label.current) {
       labelGroup.current.visible = opacity.current > 0.01 && Boolean(lastWaypoint)
       if (lastWaypoint?.label) {
@@ -446,9 +471,21 @@ function ItineraryPath({ itinerary, height }: { itinerary: Itinerary; height: He
   )
 }
 
-export function MapOverlays({ height }: { height: HeightSampler }) {
+function LabelResolver({ insets }: { insets: UiInsets }) {
+  useFrame(({ size }) =>
+    settleLabels([
+      { left: 0, top: 0, right: insets.left, bottom: size.height },
+      { left: 0, top: size.height - insets.bottom, right: size.width, bottom: size.height },
+      { left: size.width - insets.right, top: 0, right: size.width, bottom: size.height },
+    ]),
+  )
+  return null
+}
+
+export function MapOverlays({ height, insets }: { height: HeightSampler; insets: UiInsets }) {
   return (
     <>
+      <LabelResolver insets={insets} />
       <CityLabels height={height} />
       <EventPins height={height} />
       <EventMarker height={height} />

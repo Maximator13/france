@@ -9,16 +9,16 @@ export interface CameraGoal {
 
 export const CAMERA_FRAMES: { until: number; name: string; bounds: Bounds }[] = [
   { until: 1792, name: 'france', bounds: [-5.5, 41, 10, 51.5] },
-  { until: 1798, name: 'europe', bounds: [-10, 36, 30, 56] },
-  { until: 1802, name: 'europe-egypte', bounds: [-10, 27.5, 38, 56] },
-  { until: 1812, name: 'europe', bounds: [-10, 36, 30, 56] },
-  { until: 1813, name: 'russie', bounds: [0, 46, 40, 58] },
-  { until: 1815, name: 'europe', bounds: [-10, 36, 30, 56] },
+  { until: 1798, name: 'europe', bounds: [-10, 35, 30, 54.5] },
+  { until: 1802, name: 'europe-egypte', bounds: [-2, 25, 38, 50] },
+  { until: 1812, name: 'europe', bounds: [-10, 35, 30, 54.5] },
+  { until: 1813, name: 'russie', bounds: [21, 51, 39, 56.8] },
+  { until: 1815, name: 'europe', bounds: [-10, 35, 30, 54.5] },
   { until: Infinity, name: 'france', bounds: [-5.5, 41, 10, 51.5] },
 ]
 
 export function frameAt(year: number): Bounds {
-  const frame = CAMERA_FRAMES.find((candidate) => Math.round(year) < candidate.until) ?? CAMERA_FRAMES.at(-1)
+  const frame = CAMERA_FRAMES.find((candidate) => Math.floor(year) < candidate.until) ?? CAMERA_FRAMES.at(-1)
   return frame!.bounds
 }
 

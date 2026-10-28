@@ -9,6 +9,8 @@ export interface TerritorySlice {
   polity: string
   from: number
   to: number
+  start?: number
+  end?: number
   bounds: Bounds
   label: [number, number]
   polygons: Polygon[]
@@ -19,11 +21,18 @@ export interface TerritoryData {
   slices: TerritorySlice[]
 }
 
-export function activeSlices(slices: TerritorySlice[], year: number): TerritorySlice[] {
-  const rounded = Math.round(year)
-  return slices.filter((slice) => rounded >= slice.from && rounded <= slice.to)
+export function isActiveAt(slice: Pick<TerritorySlice, 'from' | 'to' | 'start' | 'end'>, time: number): boolean {
+  return time >= (slice.start ?? slice.from) && time < (slice.end ?? slice.to + 1)
+}
+
+export function calendarTime(center: number): number {
+  return center + 0.5
+}
+
+export function activeSlices(slices: TerritorySlice[], center: number): TerritorySlice[] {
+  return slices.filter((slice) => isActiveAt(slice, calendarTime(center)))
 }
 
 export function sliceKey(slices: TerritorySlice[]): string {
-  return slices.map((slice) => `${slice.track}:${slice.from}`).join('|')
+  return slices.map((slice) => `${slice.track}:${slice.start ?? slice.from}`).join('|')
 }

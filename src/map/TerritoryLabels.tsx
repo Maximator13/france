@@ -1,32 +1,41 @@
 import { Billboard, Text } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
-import { useMemo, useRef } from 'react'
-import { Vector3, type Group } from 'three'
+import { useEffect, useMemo, useRef } from 'react'
+import { MeshBasicMaterial, Vector3, type Group, type Object3D } from 'three'
 import displayFontUrl from '@fontsource/playfair-display/files/playfair-display-latin-500-normal.woff?url'
 import { prefersReducedMotion } from '../core/motion.ts'
 import type { Track } from '../data/schema.ts'
 import { tracks } from '../data/tracks.ts'
 import { useApp } from '../store.ts'
 import { project } from './geo.ts'
+import { claimLabel, isLabelHidden, LABEL_PRIORITY, releaseLabel } from './labelSpace.ts'
 import type { HeightSampler } from './reliefSampler.ts'
-import type { TerritorySlice } from './territories.ts'
+import { calendarTime, isActiveAt, type TerritorySlice } from './territories.ts'
 
 const LABEL_SCALE = 0.02
 const LIFT = 0.25
 const FADE_SECONDS = 0.8
+const LABEL_WRAP_WIDTH = 7.5
 
-function TrackLabel({ track, slices, height }: { track: Track; slices: TerritorySlice[]; height: HeightSampler }) {
+function TrackLabel({ track, rank, slices, height }: { track: Track; rank: number; slices: TerritorySlice[]; height: HeightSampler }) {
   const group = useRef<Group>(null)
-  const label = useRef<{ fillOpacity: number; outlineOpacity: number } | null>(null)
+  const label = useRef<Object3D & { fillOpacity: number; outlineOpacity: number }>(null)
+  const shown = useRef(0)
+  const id = `territory:${track.id}`
   const opacity = useRef(0)
   const target = useMemo(() => new Vector3(), [])
   const reducedMotion = useMemo(() => prefersReducedMotion(), [])
+  const material = useMemo(() => new MeshBasicMaterial({ transparent: true, depthTest: false, depthWrite: false }), [])
 
-  useFrame(({ camera }, delta) => {
+  useEffect(() => () => releaseLabel(id), [id])
+
+  useEffect(() => () => material.dispose(), [material])
+
+  useFrame(({ camera, size }, delta) => {
     const current = group.current
     if (!current) return
-    const year = Math.round(useApp.getState().view.center)
-    const slice = slices.find((candidate) => year >= candidate.from && year <= candidate.to)
+    const time = calendarTime(useApp.getState().view.center)
+    const slice = slices.find((candidate) => isActiveAt(candidate, time))
     if (slice) {
       const [lon, lat] = slice.label
       const point = project(lon, lat)
@@ -36,11 +45,15 @@ function TrackLabel({ track, slices, height }: { track: Track; slices: Territory
     }
     const step = reducedMotion ? 1 : delta / FADE_SECONDS
     opacity.current = slice ? Math.min(1, opacity.current + step) : Math.max(0, opacity.current - step)
+    if (slice) claimLabel(id, LABEL_PRIORITY.territory + rank / 100, label.current, camera, size.width, size.height)
+    else releaseLabel(id)
+    const wanted = slice && !isLabelHidden(id) ? 1 : 0
+    shown.current = wanted > shown.current ? Math.min(wanted, shown.current + step) : Math.max(wanted, shown.current - step)
     current.visible = opacity.current > 0.01
     current.scale.setScalar(camera.position.distanceTo(current.position) * LABEL_SCALE)
     if (label.current) {
-      label.current.fillOpacity = opacity.current * 0.95
-      label.current.outlineOpacity = opacity.current * 0.7
+      label.current.fillOpacity = opacity.current * shown.current * 0.95
+      label.current.outlineOpacity = opacity.current * shown.current * 0.7
     }
   })
 
@@ -52,6 +65,9 @@ function TrackLabel({ track, slices, height }: { track: Track; slices: Territory
           font={displayFontUrl}
           fontSize={0.62}
           letterSpacing={0.18}
+          maxWidth={LABEL_WRAP_WIDTH}
+          textAlign="center"
+          lineHeight={1.05}
           color={track.color}
           outlineWidth={0.05}
           outlineColor="#0b1117"
@@ -59,6 +75,8 @@ function TrackLabel({ track, slices, height }: { track: Track; slices: Territory
           anchorY="middle"
           fillOpacity={0}
           outlineOpacity={0}
+          material={material}
+          renderOrder={5}
         >
           {track.name.replace(/\s*\(.*\)$/, '').toUpperCase()}
         </Text>
@@ -74,8 +92,8 @@ export function TerritoryLabels({ slices, height }: { slices: TerritorySlice[]; 
   )
   return (
     <>
-      {byTrack.map(({ track, slices: own }) => (
-        <TrackLabel key={track.id} track={track} slices={own} height={height} />
+      {byTrack.map(({ track, slices: own }, rank) => (
+        <TrackLabel key={track.id} track={track} rank={rank} slices={own} height={height} />
       ))}
     </>
   )

@@ -169,7 +169,7 @@ export function MapStage({
     uniforms.sunDirection!.value.set(-0.6, 0.35 + grading.sunElevation * 0.6, -0.45).normalize()
     uniforms.sunColor!.value.fromArray(grading.sun)
     uniforms.ambientColor!.value.fromArray(grading.skyTop).lerp(horizon.fromArray(grading.skyHorizon), 0.5).multiplyScalar(0.75)
-    uniforms.fogColor!.value.fromArray(grading.skyHorizon).multiplyScalar(0.8)
+    uniforms.fogColor!.value.fromArray(grading.skyHorizon).lerp(horizon.fromArray(grading.skyTop), 0.45).multiplyScalar(0.6)
     background.copy(uniforms.fogColor!.value)
     scene.background = background
 
@@ -204,7 +204,7 @@ export function MapStage({
       <mesh ref={terrain} geometry={geometry} material={material} frustumCulled={false} onClick={pickOnMap} />
       <MapMarks height={heightAt} />
       <TerritoryLabels slices={territories.slices} height={heightAt} />
-      <MapOverlays height={heightAt} />
+      <MapOverlays height={heightAt} insets={insets} />
     </group>
   )
 }
