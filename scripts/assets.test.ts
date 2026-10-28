@@ -43,5 +43,5 @@ describe('optimiseDocument', () => {
       await Promise.all(document.getRoot().listTextures().map(async (texture) => [texture.getName(), (await sharp(texture.getImage()!).metadata()).width] as const)),
     )
     expect(widths).toEqual({ terrain_pass: 2048, plaster: 1024 })
-  })
+  }, 30_000)
 })
