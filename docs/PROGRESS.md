@@ -2,6 +2,41 @@
 
 Le cahier des charges est dans `docs/BRIEF.md`, le cadrage dans `docs/CADRAGE.md`. Ce fichier garde l'état du projet d'une session à l'autre.
 
+## Phase 2 : tranche verticale (28 octobre 2026, faite en autonomie, en attente de ta validation)
+
+**Fait**
+- Plan de design dans `docs/DESIGN.md` : palette nommée, accents et lumières par époque, polices, principes.
+- Carte animée : cinq itinéraires de Bonaparte datés au jour quand il le faut (Italie 1796 et 1797, Égypte 1798 et 1799, campagne de 1805, Russie et retraite de 1812, vol de l'Aigle en 1815), coordonnées Wikidata ; Empire réduit aux départements annexés (les pays occupés comptés par Cliopatria sont retirés), Hollande annexée le 9 juillet 1810 et villes hanséatiques le 13 décembre 1810, Catalogne en 1812, Confédération du Rhin et Espagne de Joseph recomposées ; 1214, 1659 et 1789 vérifiées sans correction. Cadrage russe sur toute l'année 1812, brume des bords de carte neutre (elle noyait 1812 de jaune).
+- Noms de la carte : plus de chevauchement (placement au build, puis résolution par priorité à l'écran ; « Poitiers » ne passe plus sous « France »).
+- Scène monument : le sacre de Napoléon à Notre-Dame, neuf points, d'après les planches de Percier et Fontaine (porche, grand trône sous son arc à colonnes jumelées, loges cramoisies, chœur de Robert de Cotte) ; relue par un historien et un chef opérateur, puis corrigée.
+- Scène de bataille : Austerlitz, huit phases, 37 unités, relief Copernicus, brouillard qui se lève sur le Pratzen, fumée de poudre réglable, étangs gelés et mythe des noyés démenti par le cartel ; relue et corrigée de même (charge des gardes à cheval russes, prisonniers, 30e bulletin, coiffures russes).
+- Points fragiles de la session précédente : 85 des 91 doutes des cartes résolus (une contre-vérification a encore corrigé Germigny, Mirabeau et la Sainte Ampoule), trois illustrations remplacées (gardes françaises, mousquetaires, aigle du 62e de ligne), légende d'époque juste à l'ouverture directe d'une fiche, dégradé de la carte retiré des scènes 3D.
+
+**Mesures**
+- Sacre : modèle de 3,98 Mo (budget 20 Mo), de 0,45 à 1,05 million de triangles affichés, de 61 à 162 appels de dessin ; sur la machine de mesure, 15 à 23 i/s en qualité moyenne, 55 à 60 en basse.
+- Austerlitz : modèle de 5,67 Mo, 1,3 million de triangles affichés, environ 125 appels de dessin.
+- 222 tests unitaires ; site publié 40,2 Mo, 332 fichiers (modèles 3D hors site, dans la release d'assets).
+
+**Décisions prises en autonomie**
+- Vue rasante d'Austerlitz : figurines grossies 1,5 fois (un seul nombre, `groundScale`) ; autre option dans `A_VERIFIER` (point 179).
+- Domaine royal et mouvance non distingués : alourdirait la carte et brouillerait le relief ; à faire comme étape à part.
+- Sacre éclairé par un soleil d'hiver bas vers 13 h : seule la neige de la nuit est attestée, le cartel le dit.
+
+**Problèmes connus**
+- Les deux scènes restent en réalisme simplifié : figures anguleuses de près, ciel très clair près du soleil dans la vue rasante d'Austerlitz, vue rasante encore clairsemée.
+- Sacre : 15 à 23 i/s en qualité moyenne sur la machine de mesure (le remplissage des pixels limite, pas les triangles) ; la qualité adaptative descend d'elle-même.
+- Mobile d'Austerlitz : la bande 3D visible est petite et les compteurs de la dernière phase en couvrent une partie.
+- Carte : noms longs qui débordent (« Royaume d'Italie », Espagne de Joseph sur trois lignes), campagne d'Italie petite à l'échelle de l'Europe, retours tracés sur l'aller.
+- `docs/A_VERIFIER.md` : 179 points, dont 27 nouveaux pour les scènes et 9 pour la carte.
+
+**Ce que j'attends de toi**
+1. Ouvrir https://maximator13.github.io/france/#/scene/sacre-de-napoleon et https://maximator13.github.io/france/#/scene/austerlitz, et dire si le rendu te plaît.
+2. Mesures du HUD dans chaque scène avec `?debug` (i/s, appels de dessin, qualité).
+3. Trancher la vue rasante d'Austerlitz (figurines grossies ou plus nombreuses).
+4. Toujours en attente : Search Console (nom du fichier de validation) et relecture de `A_VERIFIER` quand tu veux.
+
+**Suite** : phase 3 (tout le contenu et l'apprentissage).
+
 ## Après la phase 1 : polices et collection de cartes (28 octobre 2026, à ta demande)
 
 **Fait**

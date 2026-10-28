@@ -89,10 +89,6 @@ a {
   pointer-events: auto;
 }
 
-.app--scene::before {
-  background: linear-gradient(to left, rgb(6 10 15 / 0.55) 0%, transparent 40%);
-}
-
 .veil {
   position: absolute;
   inset: 0;
@@ -122,6 +118,10 @@ a {
   z-index: -1;
   background: linear-gradient(to right, rgb(6 10 15 / 0.86) 0%, rgb(6 10 15 / 0.66) 30%, transparent 55%);
   pointer-events: none;
+}
+
+.app--scene::before {
+  background: linear-gradient(to left, rgb(6 10 15 / 0.55) 0%, transparent 40%);
 }
 
 .header {

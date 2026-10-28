@@ -130,6 +130,7 @@ export const waypointSchema = z.strictObject({
   label: label.optional(),
   year: anyYear,
   month: z.number().int().min(1).max(12).optional(),
+  day: z.number().int().min(1).max(31).optional(),
   certainty: z.enum(CERTAINTIES),
   note: label.optional(),
 })

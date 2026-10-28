@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect } from 'react'
+import { lazy, Suspense, useEffect, useRef } from 'react'
 import { ambienceTargets, playAmbience, pointIdAt } from './core/ambience.ts'
 import { formatDate } from './core/dates.ts'
 import { recordVisit } from './core/explore.ts'
@@ -110,12 +110,15 @@ function focusTarget(route: Route): { view: Viewport; visible: (span: number) =>
 
 function useFocusOnSelection() {
   const route = useApp((state) => state.route)
+  const landed = useRef(false)
   useEffect(() => {
+    const first = !landed.current
+    landed.current = true
     const target = focusTarget(route)
     if (!target) return
     const { view } = useApp.getState()
     const centered = Math.abs(view.center - target.view.center) <= view.span * FOCUS_TOLERANCE
-    if (!centered || !target.visible(view.span)) animateView(target.view, 1)
+    if (!centered || !target.visible(view.span)) animateView(target.view, first ? 0 : 1)
   }, [route])
 }
 

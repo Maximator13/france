@@ -80,94 +80,139 @@ Chaque point donne l'hypothèse retenue et ses sources. Tu tranches ; une fois t
 
 Doutes relevés à la rédaction et à la relecture des 120 cartes ; chaque point donne l'hypothèse retenue et ses sources.
 
-53. Molière (moliere) : le portrait du musée Condé est attribué sur Commons à Pierre Mignard, vers 1658 ; certains catalogues le donnent à Nicolas Mignard. J'ai retenu Pierre Mignard (source : la fiche Commons du Google Art Project).
-54. Canal du Midi : la date retenue est la mise en eau de 1681 (Riquet est mort en octobre 1680). La référence Bergasse (dir.), Le Canal du Midi, Cessenon, 1982 à 1985 vient de ma mémoire : éditeur et années à vérifier.
-55. Gardes françaises : l'échange de politesses à Fontenoy est connu par Voltaire (Précis du siècle de Louis XV) et par d'autres récits ; le texte de la carte signale que les mots exacts sont incertains. L'emplacement 'chapitre XV' est à vérifier.
-56. Hôtel des Invalides : décision de fondation en 1670, édit d'établissement d'avril 1674 et premiers pensionnaires en 1674 ; le dôme est daté de 1706. La source primaire est citée comme 'Édit d'avril 1674'.
-57. Mousquetaires : la création de 1622 et la mort de d'Artagnan devant Maastricht en 1673 sont sûres. Les références modernes (Chagniot, Paris et l'armée au XVIIIe siècle, Economica, 1985) traitent surtout des gardes françaises ; il vaudrait mieux une monographie sur les mousquetaires.
-58. Le Régent : 140,64 carats ; il a été trouvé en Inde vers 1698 et taillé en Angleterre. Son achat en 1717, appuyé par Saint-Simon, figure dans les Mémoires de celui-ci.
-59. Les références bibliographiques modernes (Bluche 1986, Morel 1988, Virol 2003, Hildesheimer 2004, Dessert 2007, Forestier 2018, Pomeau 1995, Antoine 1989, Verlet 1985, Fischer 2011, Duplessy 1988 et 1989, Proust 1962, Niort 2015, Sala-Molins 1987) sont citées de mémoire, sans vérification en ligne de l'éditeur ni de l'année.
-60. Hugues Capet : la carte dit seulement qu'il est élu par les grands réunis à Senlis en 987. Le lieu du sacre (Noyon ou Reims) n'est pas mentionné, car les sources divergent (Richer, Histoires, IV ; Y. Sassier, Hugues Capet, 1987).
-61. Mont-Saint-Michel : le rôle financier de Philippe Auguste dans la construction de la Merveille après l'incendie de 1204 relève surtout de la tradition. La carte ne l'affirme pas, elle date seulement la Merveille vers 1228.
-62. Vase d'Aliénor : la datation du cristal (Perse sassanide, VIe ou VIIe siècle) est l'hypothèse du Louvre et du catalogue Le Trésor de Saint-Denis (1991). La carte dit « sans doute ». L'année de la carte (1137) est celle du mariage, pas celle du montage par Suger.
-63. Sceau de majesté : la photo Commons (Tangopaso, versée dans le domaine public) montre probablement un moulage d'archives, pas la cire d'origine. La fiche le signale.
-64. Statue de Mainneville (illustration de Saint Louis) : on l'identifie à Saint Louis, peut-être avec les traits de Philippe le Bel. C'est une hypothèse et la fiche reste prudente.
-65. Croisés de Jérusalem : on suppose que l'enluminure de Commons « Godefroi1099.jpg » (Gallica btv1b10024631m, 1337, Maître de Fauvel) vient du manuscrit BnF Français 22495. La page Commons ne donne pas la cote, il faut la vérifier.
-66. Chanson de Roland : le renvoi aux laisses 168 à 176 pour la mort de Roland suit la numérotation de l'édition Ian Short. Il peut varier d'une édition à l'autre.
-67. Bicorne de Napoléon : le nombre de chapeaux fournis par le chapelier Poupard (on lit souvent environ 120) et le nombre d'exemplaires conservés (une vingtaine, parfois 19) varient selon les auteurs ; le texte reste prudent ("plusieurs dizaines", "une vingtaine environ"). Sources : Dictionnaire Napoléon (dir. J. Tulard), notices des musées de l'Armée et Condé.
-68. Dépêche de Wellington du 19 juin 1815 : rattachée au tome XII de l'édition Gurwood des Dispatches ; numéro de tome à vérifier sur l'édition consultée.
-69. Garde impériale : l'effectif "plus de 50 000 hommes en 1812" suit l'ordre de grandeur habituel (Lachouque) ; les chiffres varient selon qu'on compte la Jeune Garde et selon les dates.
-70. Grande Armée : "plus de 400 000 hommes passent le Niémen" en 1812 ; les estimations de la première ligne vont d'environ 400 000 à 450 000 selon les auteurs (Tulard, Lentz).
-71. Portrait gravé de Fouché (illustration de joseph-fouche) : auteur inconnu, daté vers 1815 sur Commons, provenance du fichier peu documentée (repris d'une reproduction de presse) ; domaine public certain vu l'âge de l'œuvre, mais l'image pourrait être remplacée par un portrait mieux sourcé si l'on en trouve un en haute définition.
-72. Aquarelle de Longwood attribuée à Louis-Joseph Marchand : lieu de conservation non indiqué sur Commons ; la date "vers 1816 et 1821" est déduite du séjour de Marchand à Sainte-Hélène.
-73. Portrait de Ney par Gérard (vers 1805) : passé en vente chez Christie's en 2013, conservé aujourd'hui en collection particulière selon Commons.
-74. Olympe de Gouges : le pastel retenu (fichier Commons Olympe_de_Gouges.png) est traditionnellement attribué à Alexandre Kucharski et identifié comme son portrait, mais l'attribution et l'identification du modèle sont discutées ; la fiche dit 'Portrait présumé' et 'Attribué à'.
-75. Mirabeau : la réplique du 23 juin 1789 au marquis de Dreux-Brézé ('la force des baïonnettes') est connue en plusieurs versions ; le texte de la carte le dit au conditionnel. Source : Bailly, Mémoires ; Chaussinand-Nogaret, Mirabeau, 1982.
-76. Serment du Jeu de paume : l'image est un détail de la version peinte P67 du musée Carnavalet, donnée à Jacques-Louis David par Paris Musées (CC0) ; datation 'vers 1790 à 1791' et part de l'atelier à vérifier.
-77. Danton : le portrait de Carnavalet est traditionnellement attribué à Constance-Marie Charpentier, vers 1790.
-78. Charlotte Corday : l'image est une reproduction ancienne du portrait de Jean-Jacques Hauer (1793) ; localisation de l'original au musée Lambinet de Versailles retenue d'après la tradition, à vérifier.
-79. Louis XVI : dessin de Joseph Ducreux réalisé fin 1792 ou début 1793 pendant la captivité au Temple selon la tradition ; localisation au musée Carnavalet à vérifier (la page Commons ne cite qu'un site de reproductions).
-80. Prise de la Bastille : aquarelle de Jean-Pierre Houël localisée à la Bibliothèque nationale de France (département des Estampes), à vérifier.
-81. Cocarde tricolore : le port obligatoire pour les hommes est daté de juillet 1792 sans jour précis (décret du 5 ou du 8 juillet 1792 selon les sources) ; pour les femmes, décret du 21 septembre 1793.
-82. Valmy : coordonnées du village de Valmy (49.0817, 4.7658), le moulin étant un peu à l'ouest ; aucun wikidataId ajouté aux nouveaux lieux.
-83. L'id de carte 'louis-xvi' a été retenu pour la personne existante ; s'il entre en collision avec une carte de la période Bourbons, renommer en 'louis-xvi-1793'.
-84. Illustration de bertrand-du-guesclin : la miniature de Jean Fouquet (Gallica btv1b10538041t) est rattachée aux Grandes Chroniques de France (BnF, ms. français 6465 probablement) ; le numéro du manuscrit n'a pas été vérifié, il n'est pas cité dans la fiche.
-85. Illustration de jacques-coeur : toile d'un suiveur de Jean Fouquet passée chez Christie's, date inconnue (portrait posthume probable) ; fiche marquée « date inconnue ».
-86. Illustration de louis-xi : portrait attribué à Jacob de Littemont vers 1470 selon Commons (vente Sotheby's 2012) ; attribution reprise telle quelle.
-87. Illustration de archers-anglais : Commons attribue la miniature de Crécy (BnF, ms. français 2643) à Loyset Liédet, sans date précise ; reprise comme « Attribué à Loyset Liédet », XVe siècle.
-88. Références bibliographiques citées de mémoire, éditeurs ou années à revérifier : Chapelot, Le Château de Vincennes (CNRS Éditions, 1994) ; Cazelles et Rathofer, Les Très Riches Heures du duc de Berry (Lucerne, Faksimile Verlag, 1984) ; Lassabatère, Du Guesclin (Perrin, 2015) ; Chatenet, Chambord (Éditions du patrimoine, 2001) ; Lafaurie, Les Monnaies des rois de France (Bourgey, 1951).
-89. Étymologie du franc (légende Francorum rex ou roi libéré) : la carte présente les deux hypothèses comme débattues.
-90. Donjon de Vincennes : hauteur donnée « environ 50 mètres » (52 m selon les sources courantes) et début des travaux vers 1337 sous Philippe VI.
-91. Chambord : l'inspiration de Léonard de Vinci pour l'escalier à double révolution est présentée comme une tradition sans preuve formelle.
-92. moliere : Commons attribue le portrait de Chantilly à Pierre Mignard (vers 1658) ; certains catalogues le donnent à Nicolas Mignard. J'ai gardé Pierre Mignard, selon la fiche Commons et le Google Art Project.
-93. couronne-de-louis-xv : les sources hésitent sur le créateur (Laurent Rondé selon Wikipédia EN, Claude Rondé dessinateur avec Augustin Duflos selon la Met et le nom du fichier Commons). La fiche garde 'Laurent Rondé et Augustin Duflos' ; à confirmer dans la notice du Louvre.
-94. canal-du-midi : Bergasse (dir.), Le Canal du Midi, 4 vol., Cessenon, 1982 à 1985 me semble réel (cité dans les bibliographies), mais je ne l'ai pas vérifié en ligne.
-95. gardes-francaises : l'anecdote de Fontenoy est placée au chapitre XV du Précis du siècle de Louis XV (de mémoire, chapitre 'Bataille de Fontenoy'). Le texte de la carte en signale déjà le caractère incertain.
-96. mousquetaires-du-roi : la référence Petitfils (Le Véritable d'Artagnan, Tallandier, 1981) est citée de mémoire, sans vérification en ligne.
-97. Autres références modernes non vérifiées en ligne mais plausibles et connues : Bluche 1986, Babelon 1982, Hildesheimer 2004, Forestier 2018, Virol 2003, Pomeau 1995, Antoine 1989, Verlet 1985, Fischer 2011 (Boréal), Morel 1988, Proust 1962, Niort 2015, Sala-Molins 1987.
-98. hotel-des-invalides : décision de fondation en 1670 (ordonnance de février), édit d'établissement d'avril 1674, église du Dôme achevée en 1706 ; ces dates sont cohérentes avec Wikipédia.
-99. bertrand-du-guesclin : la miniature de Fouquet vient de Gallica btv1b10538041t, très probablement les Grandes Chroniques de France, BnF ms. français 6465 ; numéro de manuscrit non cité dans la fiche faute de vérification.
-100. jacques-coeur : portrait en pied d'un suiveur de Fouquet (Christie's), posthume, date inconnue ; licence PD sans ambiguïté, mais la valeur iconographique est faible.
-101. louis-xi : attribution à Jacob de Littemont vers 1470 reprise de Commons et du catalogue Sotheby's 2012.
-102. palais-des-papes : la photo Baldus montre le côté nord ; la tour à flèche à gauche est probablement le clocher de Notre-Dame-des-Doms, d'où une note de fiche volontairement générale.
-103. Références citées de mémoire mais jugées réelles : Chapelot, Le Château de Vincennes (CNRS Éditions, 1994) ; Cazelles et Rathofer (Lucerne, Faksimile Verlag, 1984) ; Lassabatère, Du Guesclin (Perrin, 2015) ; Chatenet, Chambord (Éditions du patrimoine, 2001) ; Lafaurie, Les Monnaies des rois de France (Bourgey, 1951). Éditeurs et années non revérifiés en ligne.
-104. chambord : l'inspiration de Léonard pour l'escalier reste présentée comme une tradition sans preuve formelle ; franc : étymologie présentée comme débattue.
-105. Charlotte Corday: the Commons file is an old reproduction (715x1024, smaller than the 900 px wanted) taken from vimoutiers.net. That the Hauer original is at the musée Lambinet in Versailles is the accepted tradition. Hypothesis kept; sources: Commons, Wikipedia FR 'Jean-Jacques Hauer'.
-106. Olympe de Gouges: the pastel's attribution to Kucharski and the identification of the sitter are disputed; the meta file already says 'présumé' and 'attribué à'. Sources: Commons; Olivier Blanc, 1981.
-107. Mirabeau: Commons and Paris Musées date it 1795, which is after his death in 1791, so it is probably a replica after a Boze portrait from 1789 to 1791. Not checked on the Carnavalet object record.
-108. Louis XVI: the Commons credit points to the musée Carnavalet site, which supports the location given in the meta file. Dating December 1792 to January 1793 according to Commons.
-109. Prise de la Bastille: the Commons file comes from Gallica (BnF, btv1b103025148). The image itself is public domain, but the instruction excludes Gallica 'en direct', and here it came through Commons. Kept.
-110. Tuileries (Bertaux): the Commons scan comes from a Zurich school textbook (2000), so quality is mediocre (2056x1416). The original is believed to be at the château de Versailles (Joconde).
-111. Cocarde: compulsory wear for men is dated to July 1792 (decree of 5 or 8 July depending on the source), and the card text deliberately stays at '1792'. For women, the decree of 21 September 1793 is certain.
-112. Serment du Jeu de paume: Carnavalet P67 is given to David by Paris Musées; the painted version's date and the part played by the workshop are still uncertain (Commons says only '18th century').
-113. Philippe le Bel et Chanson de Roland utilisent deux miniatures différentes du même manuscrit de Fouquet (Grandes Chroniques, BnF Français 6465). Je l'ai accepté, car chaque miniature est une œuvre distincte. Si la règle « une œuvre par carte » vise tout le manuscrit, il faut remplacer l'une des deux, par exemple Roland par le vitrail de Charlemagne à Chartres.
-114. Bernard de Clairvaux : selon la description Commons, la miniature de Jean Colombe (Français 5594, fol. 138) montre Bernard. J'ai supposé qu'il s'agit du moine en habit blanc à gauche, mais la miniature ne porte aucun nom.
-115. Statue de Mainneville (Saint Louis) : on la présente parfois comme portant les traits de Philippe le Bel, sans certitude. La fiche reste prudente.
-116. Sceau de majesté : l'image versée dans le domaine public par Tangopaso a été prise à l'exposition du 800e anniversaire de Saint Louis (2014 à 2015). Il s'agit probablement d'un moulage des Archives nationales, et non de la cire d'origine. La fiche le signale.
-117. Mont-Saint-Michel : le rôle de Philippe Auguste dans le financement de la Merveille relève de la tradition. La carte dit seulement que l'incendie de 1204 est le fait de ses alliés bretons, ce qui est attesté. Elle cite Baldwin, qui traite de la campagne de 1204 mais pas du monument.
-118. Vase d'Aliénor : le cristal serait sassanide, du VIe ou VIIe siècle. C'est l'hypothèse du Louvre, et la carte dit « sans doute ». Le don d'Aliénor à Louis VII lors du mariage est rapporté par Suger dans son De administratione.
-119. Chanson de Roland : la référence aux laisses 168 à 176 suit la numérotation du manuscrit d'Oxford (éd. Short). Elle peut varier d'une édition à l'autre.
-120. Hugues Capet : la carte ne mentionne pas le lieu du sacre (Noyon, selon la tradition, ou Reims), car les sources divergent.
-121. Image de Clovis : Commons attribue la miniature aux Grandes Chroniques de France, BnF ms. français 2610, et la date du XIVe siècle, alors que le style (armures de plates) évoque le XVe ; fiche datée « XIVe ou XVe siècle », cote à vérifier sur Gallica.
-122. Baptême de Clovis : date traditionnelle 496, plusieurs historiens proposent 498 à 508 (Rouche, Clovis, 1996) ; la carte le dit.
-123. Baptistère Saint-Jean de Poitiers : origine datée du IVe ou du Ve siècle selon les auteurs, reconstruction mérovingienne (VIe et VIIe siècles) ; année de carte 650 conventionnelle (Hubert, L'Art préroman).
-124. Cryptes de Jouarre : fondation vers 630 par Adon (dates de 630 à 635 selon les auteurs), sarcophage de Théodechilde attribué à la fin du VIIe siècle ; année 630 retenue.
-125. Sainte Ampoule : le reliquaire du palais du Tau est attribué à l'orfèvre Jean-Charles Cahier, 1823, pour le sacre de Charles X ; attribution reprise de mémoire, à confirmer (Gaborit-Chopin, Regalia, 1987).
-126. Joyeuse : datation des éléments de l'épée du sacre (pommeau Xe ou XIe siècle, quillons XIIe, poignée plus tardive) d'après Gaborit-Chopin, Regalia, 1987 ; année de carte 814 conventionnelle (mort de Charlemagne).
-127. Chapelle palatine : consécration en 805 par Léon III connue seulement par une tradition plus tardive ; la carte dit « vers 805 ».
-128. Manuscrit des serments de Strasbourg (BnF latin 9768) : Commons le date des XIe et XIIe siècles, la BnF de la fin du Xe ; fiche « fin du Xe siècle ». Folio 13 vérifié à l'image (« Pro Deo amur » visible).
-129. Coordonnées des nouveaux lieux (baptistère de Poitiers, Germigny-des-Prés, abbaye de Jouarre) tirées de mémoire à environ 100 m près, sans wikidataId ; à vérifier.
-130. Bicorne : environ 120 chapeaux fournis par Poupard et 19 à 20 conservés selon les auteurs (Dictionnaire Napoléon, dir. Tulard ; notices du musée de l'Armée). Le texte reste prudent ('plusieurs dizaines', 'une vingtaine environ').
-131. Dépêche de Wellington du 19 juin 1815 : l'hypothèse est le tome XII de l'édition Gurwood (1838), qui couvre 1814 et 1815. À confirmer sur l'édition consultée.
-132. Garde impériale, 'plus de 50 000 hommes en 1812' : l'ordre de grandeur courant est d'environ 56 000 (Lachouque ; Dictionnaire Napoléon). Le chiffre varie selon les dates et selon que l'on compte la Jeune Garde.
-133. Grande Armée, 'plus de 400 000 hommes passent le Niémen' : les estimations de la première ligne vont d'environ 400 000 à 450 000 selon les auteurs (Tulard, Lentz).
-134. Aquarelle de Longwood par Marchand : ni date ni lieu de conservation sur Commons. 'Vers 1816 et 1821' est déduit du séjour de Marchand ; il pourrait s'agir d'une réplique plus tardive.
-135. Portrait de Joséphine par Gérard, titre 'château de Fontainebleau' : la fiche Commons (Google Art Project) n'indique pas l'institution. L'hypothèse est la version de Fontainebleau, à confirmer (base Joconde).
-136. Portrait de Fouché (Dubufe d'après Berthon) : Commons date l'œuvre de la première moitié du XIXe siècle sans plus de précision ; c'est une copie d'après Berthon.
-137. Image de Clovis : Commons rattache la miniature au manuscrit BnF fr. 2610 et la date du XIVe siècle (date conventionnelle 1350). Le style des armures et des brigandines suggère plutôt le début du XVe siècle. La fiche reste à « XIVe ou XVe siècle » ; il faudrait vérifier la notice Gallica du fr. 2610.
-138. Serments de Strasbourg, BnF latin 9768 : Commons date le manuscrit de 1000 à 1100, la fiche dit « fin du Xe siècle » d'après la BnF. Il faudrait vérifier la notice BnF Archives et manuscrits.
-139. Germigny-des-Prés : la consécration de 806 repose sur une inscription de dédicace dont l'authenticité est parfois discutée (Heitz 1980 ; notice Mérimée de l'église).
-140. Charles Martel : selon la tradition historiographique (Riché 1983), le surnom n'apparaît qu'au IXe siècle. Le texte dit « n'apparaît qu'au IXe siècle » sans citer la première attestation précise. La bataille est parfois datée de 733.
-141. Chapelle palatine : la consécration par Léon III en 805 n'est connue que par une tradition plus tardive. Le texte dit « vers 805 », c'est acceptable.
-142. Les coordonnées des nouveaux lieux (Poitiers 46.5797/0.3480, Germigny 47.8451/2.2686, Jouarre 48.9262/3.1265) sont cohérentes avec les positions connues à environ 100 m près, sans wikidataId. À contrôler sur Wikidata si l'on veut ajouter les identifiants.
-143. Reliquaire de la Sainte Ampoule : l'attribution à Jean-Charles Cahier, achevé en 1823 pour le sacre de Charles X, est confirmée par Wikipédia FR (article Sainte Ampoule). Elle reste à recouper avec Gaborit-Chopin, Regalia, 1987.
+53. Résolu : Pierre Mignard, vers 1658, est maintenu pour le portrait du musée Condé (PE 313) ; le tableau donné à Nicolas Mignard est un autre portrait (Molière en César, Comédie-Française). Sources : Joconde 00000103952 et 000PE009468 (pop.culture.gouv.fr).
+54. Résolu : mise en eau de 1681 et mort de Riquet en octobre 1680 cohérentes ; référence corrigée en « Le Canal du Midi, 4 vol., Cessenon, J.-D. Bergasse, 1982 à 1985 ». Sources : catalogue du Centre canadien d'architecture (cca.qc.ca), structurae.net.
+55. Résolu : le chapitre XV du Précis du siècle de Louis XV traite du siège de Tournai et de la bataille de Fontenoy ; le renvoi est juste. Source : Wikisource, Précis du siècle de Louis XV.
+56. Résolu : édit de fondation du 24 février 1670, édit d'établissement d'avril 1674, premiers pensionnaires en octobre 1674, église du Dôme achevée en 1706 ; la carte est exacte. Source : dossier pédagogique du musée de l'Armée (2025).
+57. Résolu : la carte des mousquetaires cite Petitfils, monographie sur d'Artagnan, et non Chagniot (cité seulement pour les gardes françaises) ; pas de changement. Sources : catalogues des bibliothèques de la Défense et de la Ville de Paris.
+58. Résolu : la notice du Louvre confirme la découverte en 1698 (Golconde), la taille en Angleterre (1704 à 1706), l'achat du 6 juin 1717 et le poids de 140,64 carats. Source : collections.louvre.fr, ark:/53355/cl010103121.
+59. Résolu : références vérifiées en catalogue (Bluche, Louis XIV, Fayard, 1986 ; Babelon, Henri IV, Fayard, 1982 ; Antoine, Louis XV, Fayard, 1989 ; Morel, Fonds Mercator, 1988 ; Virol, Champ Vallon, 2003 ; Hildesheimer, Flammarion, 2004 ; Forestier, Gallimard, 2018 ; Pomeau, Fayard, 1995 ; Verlet, Fayard, 1985 ; Fischer, Boréal, 2011 ; Proust, Armand Colin, 1962 ; Niort, Le Cavalier bleu, 2015 ; Sala-Molins, PUF, 1987 ; Chagniot, Economica, 1985). La carte cite Dessert 2019 (Colbert ou le mythe de l'absolutisme, Fayard), juste. Duplessy corrigé en « Paris, Maison Platt, 1988 et 1989 » : « Florange » venait d'un autre livre (Ciani et Florange, 1926). Sources : catalogue.bnf.fr, catalogues de la Défense, liburutegia.aranzadi.eus.
+60. Résolu : la carte ne localise pas le sacre (Noyon ou Reims restent en concurrence) et retient l'élection de Senlis. Sources : Richer, Histoires, IV, 11 et 12 ; Sassier, Hugues Capet, Fayard, 1987.
+61. Résolu : la carte n'attribue aucun financement à Philippe Auguste ; elle date seulement l'incendie de 1204 et la Merveille vers 1228, ce qui est prudent et exact.
+62. Résolu : le Louvre date le cristal de 500 à 700 (« Perse ? ») et la monture d'avant 1147 ; texte de la carte précisé (« au VIe ou au VIIe siècle ») et date de la fiche corrigée. Source : collections.louvre.fr, ark:/53355/cl010096614 (MR 340).
+63. Résolu : l'objet photographié est un moulage moderne (intact, sans lacs, teinte uniforme) ; la fiche dit désormais « moulage exposé ». Source : page Commons du fichier (exposition Saint Louis, 2014 à 2015).
+64. Résolu : Commons parle d'une représentation de Saint Louis sans portrait réaliste ; les traits de Philippe le Bel restent une hypothèse et la fiche reste prudente. Source : page Commons « Statue de Saint-Louis.jpg ».
+65. Résolu : cote confirmée, BnF Français 22495, fol. 69v (Maître de Fauvel, 1337) ; ajoutée au titre de la fiche. Sources : description Commons (Gallica btv1b10024631m/f150), catégorie Commons « Roman de Godefroy de Bouillon, BNF Fr22495 ».
+66. Résolu : laisses 168 à 176 dans la numérotation d'Oxford (Bédier, Short), soit les vers 2259 à 2396 ; les vers sont ajoutés au renvoi pour le rendre stable (Gautier numérote autrement). Source : Wikisource, édition Bédier.
+67. Résolu : environ 120 chapeaux Poupard et de 19 à 30 exemplaires conservés selon les experts ; « plusieurs dizaines » et « une vingtaine environ » couvrent l'écart. Sources : Jean-Claude Dey (vente Osenat, 2014) ; Bonhams.
+68. Résolu : la dépêche du 19 juin 1815 est au tome XII de Gurwood (Londres, 1838), p. 478 à 484 ; renvoi complété. Sources : British Library ; Wikisource anglais.
+69. Résolu : « plus de 50 000 hommes en 1812 » reste vrai (de 56 000 selon Lachouque à 60 000 avec la Jeune Garde). Source : Larousse, article Garde impériale.
+70. Résolu : « plus de 400 000 hommes » est un plancher sûr pour la première ligne (400 000 à 450 000). Sources : napoleon.org ; Tulard ; Lentz.
+71. Résolu : caduc, la fiche montre désormais le tableau de Versailles MV 6505 (Dubufe d'après Berthon) et non plus la gravure anonyme ; voir le point 136.
+72. Aquarelle de Longwood attribuée à Louis-Joseph Marchand : photographiée par Paul Hermans le 5 juillet 2021, le même jour qu'un bicorne Poupard exposé en Belgique, donc sans doute prêtée à une exposition napoléonienne belge ou issue d'une collection particulière. Hypothèse : une « Vue de Longwood House » de 1819 attribuée à Marchand est signalée au musée Bertrand de Châteauroux, sans preuve qu'il s'agisse de la même feuille. La fiche garde « vers 1816 et 1821 » sans lieu de conservation. Sources : page Commons du fichier ; mrodenberg.com ; shannonselin.com.
+73. Résolu : collection particulière confirmée (vente Christie's du 30 janvier 2013, provenance des descendants du maréchal) ; date de la fiche élargie à « entre 1805 et 1812 », Commons donnant les deux dates. Source : page Commons « Marechal_Ney.jpg ».
+74. Résolu : attribution et identification restent discutées et la fiche le dit déjà (« Portrait présumé », « Attribué à ») ; aucune source ne permet de trancher davantage. Sources : Commons ; Olivier Blanc, 1981.
+75. Résolu : la réplique à Dreux-Brézé reste au conditionnel dans la carte, ce qui suffit. Sources : Bailly, Mémoires ; Chaussinand-Nogaret, Mirabeau, 1982.
+76. Résolu : Paris Musées donne David comme « auteur du modèle » et date la toile P67 « après 1791 » ; la fiche dit désormais « D'après Jacques-Louis David », « après 1791 ». Source : parismuseescollections.paris.fr, notice 151562.
+77. Résolu : Carnavalet retient Constance-Marie Charpentier, vers 1790 (P714) ; note de la fiche mise à jour. Source : parismuseescollections.paris.fr, portrait de Georges Danton.
+78. Résolu : le musée Lambinet conserve bien le portrait de Corday par Hauer (1793). Sources : Wikipédia « Jean-Jacques Hauer » ; catalogue.bnf.fr, cb44528178f.
+79. Résolu : Carnavalet confirme le dessin D.7108 mais le date largement (1787 à 1797) ; la fiche indique la cote et « fin 1792 ou début 1793 (selon la tradition) ». Source : parismuseescollections.paris.fr, portrait de Louis XVI.
+80. Résolu : l'aquarelle de Houël vient de Gallica (BnF, btv1b103025148, 37,8 x 50,5 cm), le lieu BnF est donc fondé. Source : page Commons « Prise_de_la_Bastille.jpg ».
+81. Résolu : l'obligation pour les hommes découle de la loi sur la patrie en danger (votée début juillet, promulguée le 8 juillet 1792), d'où les deux dates ; la carte dit « 1792 », ce qui est exact ; le décret du 21 septembre 1793 pour les femmes est sûr. Sources : victorianweb.org ; Girardet, « Les trois couleurs », Les Lieux de mémoire.
+82. Résolu : coordonnées remplacées par celles de la commune sur Wikidata (49.0844, 4.7736) et wikidataId Q1060595 ajouté ; le moulin (Q22915790) est en 49.0797, 4.7674. Source : wikidata.org.
+83. Résolu : aucune collision, l'id de carte 'louis-xvi' n'existe que dans cards-revolution.ts ; il est conservé.
+84. Résolu : cote vérifiée, BnF Français 6465, fol. 434v ; ajoutée au titre de la fiche. Source : page Commons du fichier (Gallica btv1b10538041t/f936).
+85. Résolu : portrait posthume, toile en pied de 191 x 112 cm bien postérieure au XVe siècle ; la note de la fiche le dit. Source : page Commons « Jacques_Coeur,_by_follower_of_Jean_Fouquet.jpg ».
+86. Résolu : attribution à Jacob de Litemont, vers 1469, retenue par Sotheby's (4 juillet 2012, lot 9) et la Weiss Gallery ; « Attribué à » maintenu. Source : weissgallery.com.
+87. Résolu : miniature du Froissart de Gruuthuse (BnF Français 2643, fol. 165v) attribuée à Loyset Liédet, Bruges, vers 1470 à 1475 ; titre et date de la fiche précisés. Sources : Wikidata Q131625937 ; fiche BnF classes.bnf.fr (MF_fiche_4).
+88. Résolu : les cinq références existent (Chapelot, CNRS Éditions, 1994 ; Cazelles et Rathofer, Lucerne, Faksimile Verlag, 1984 ; Lassabatère, Perrin, 2015 ; Chatenet, Éditions du patrimoine, 2001 ; Lafaurie, Bourgey, 1951, tome I, précisé dans la carte du franc). Source : catalogue.bnf.fr (SRU).
+89. Résolu : les deux étymologies sont présentées comme débattues, ce qui reflète l'état de la question.
+90. Résolu : 52 m selon le Centre des monuments nationaux ; Philippe VI n'a posé que les fondations, la tour s'élève à partir de 1361 ; texte de la carte corrigé. Source : chateau-de-vincennes.fr.
+91. Résolu : la carte présente l'inspiration de Léonard comme une tradition sans preuve formelle, ce qui est exact.
+92. Résolu : voir le point 53.
+93. Résolu : selon le Louvre (MS 61, « Couronne personnelle de Louis XV »), la couronne est dessinée par Claude Rondé et exécutée par l'orfèvre Augustin Duflos ; créateur et titre de la fiche corrigés. Sources : collections.louvre.fr, ark:/53355/cl010097015 ; Metropolitan Museum, 742866.
+94. Résolu : voir le point 54.
+95. Résolu : voir le point 55.
+96. Résolu : Petitfils, Le Véritable d'Artagnan, Paris, Tallandier, 1981 (ISBN 2-235-01222-1). Source : catalogue des bibliothèques de la Défense.
+97. Résolu : voir le point 59.
+98. Résolu : voir le point 56.
+99. Résolu : voir le point 84.
+100. Résolu : voir le point 85 ; remplacer l'image par une effigie sûre reste un choix à faire.
+101. Résolu : voir le point 86.
+102. Résolu : la vue de Baldus montre la façade ouest sur la place du Palais, avec la porte des Champeaux et, à gauche, le clocher de Notre-Dame-des-Doms ; note de la fiche corrigée. Source : Metropolitan Museum, 2005.100.364.28.
+103. Résolu : voir le point 88.
+104. Résolu : voir les points 89 et 91.
+105. Résolu : voir le point 78 ; le fichier Commons reste une reproduction ancienne de faible définition (715 x 1024), à remplacer si une meilleure image libre apparaît.
+106. Résolu : voir le point 74.
+107. Résolu : Paris Musées et Commons donnent « Joseph Boze (d'après) », vers 1795 (P1506) : copie posthume ; la fiche dit désormais « D'après Joseph Boze », « vers 1795 ». Source : page Commons du fichier (Paris Musées 152165).
+108. Résolu : voir le point 79.
+109. Résolu : voir le point 80 ; l'image, du domaine public, passe par Commons.
+110. Tuileries (Bertaux) : l'original est confirmé à Versailles (MV 5182, Salon de 1793) et la cote est ajoutée au titre de la fiche. Reste ouvert : la qualité du fichier Commons (2056 x 1416, tiré d'un manuel). La photo haute définition du château de Versailles est téléchargeable, mais sa licence doit être vérifiée avant tout remplacement. Sources : Joconde 000PE009579 ; collections.chateauversailles.fr.
+111. Résolu : voir le point 81.
+112. Résolu : voir le point 76.
+113. Trois cartes puisent dans BnF Français 6465 : Roland (fol. 113), Philippe le Bel (fol. 301v) et Du Guesclin (fol. 434v). Recommandation : accepter, car chaque miniature est une œuvre distincte. Si la règle « une œuvre par carte » vise le manuscrit entier, il faut remplacer deux images, par exemple Roland par le vitrail de Charlemagne à Chartres. Décision à prendre par l'utilisateur. Sources : pages Commons des trois fichiers (ark btv1b10538041t).
+114. Bernard de Clairvaux : le moine tonsuré au premier plan à gauche porte l'habit cistercien (tunique blanche, scapulaire noir), ce qui fait très probablement de lui Bernard. Le clerc en rouge qui croise le roi serait un prélat. La description Commons, qui parle d'un « évêque de Versailles », est fautive ; un fichier plus ancien porte la légende « en présence de saint Bernard ». La note de la fiche est ajustée. Il reste à vérifier dans Mandragore (BnF, Français 5594, fol. 138), inaccessible lors de la vérification.
+115. Résolu : voir le point 64.
+116. Résolu : voir le point 63.
+117. Résolu : voir le point 61.
+118. Résolu : voir le point 62 ; le don à Louis VII est rapporté par Suger (De administratione) et par l'inscription du pied (« Hoc vas sponsa dedit Anor regi Ludovico »). Source : collections.louvre.fr, MR 340.
+119. Résolu : voir le point 66.
+120. Résolu : voir le point 60.
+121. Résolu : le BnF Français 2610 est un manuscrit du XVe siècle (Wikidata Q124870629, autres images du même manuscrit sur Commons) ; la fiche indique « XVe siècle » et la cote. Source : catégorie Commons « Grandes Chroniques de France (BNF, Fr 2610) ».
+122. Résolu : la carte (« 496 par la tradition, plus tard selon bien des historiens ») est juste ; Rouche penche pour 498 ou 499, d'autres auteurs pour 506 à 508. Source : Rouche, Clovis, Paris, Fayard, 1996.
+123. Résolu : Mérimée PA00105585 donne IVe, VIIe, XIe et XIIe siècles, conforme à la carte ; année 650 conventionnelle. Sources : pop.culture.gouv.fr ; Hubert, L'Art préroman, Paris, Les Éditions d'art et d'histoire, 1938.
+124. Résolu : Mérimée PA00087037 donne une fondation vers 635 et des cryptes vers 680 ; année et texte de la carte passés à 635. Source : pop.culture.gouv.fr.
+125. Résolu : Palissy PM51000716 donne « atelier de Cahier, orfèvre à Paris », 1820, service du sacre de Charles X ; Wikipédia dit commandé sous Louis XVIII et achevé en 1823 ; la fiche dit « Atelier de Jean-Charles Cahier », « vers 1820 à 1823 ». Source : pop.culture.gouv.fr.
+126. Résolu : le Louvre (MS 84) date le pommeau de 900 à 1100, les quillons de 1100 à 1200, la fusée des XIIIe ou XIVe siècles et la lame de l'époque moderne ; texte de la carte et date de la fiche corrigés (« du Xe au XIVe siècle », lame très reprise). Source : collections.louvre.fr, ark:/53355/cl010113394 (catalogue Regalia, 1987, p. 64 à 70).
+127. Résolu : « consacrée vers 805 » est une formulation prudente adaptée à une tradition tardive.
+128. Résolu : les serments sont aux f. 12v à 13v selon la notice BnF ; des additions de 976 à 978 placent la copie vers l'an mil ; la fiche dit « fin du Xe ou début du XIe siècle ». Sources : notice BnF reprise sur Commons (archivesetmanuscrits.bnf.fr, cc572968) ; Wikipédia anglais, Oaths of Strasbourg.
+129. Résolu : coordonnées alignées sur Wikidata et identifiants ajoutés : baptistère (Q993659 ; 46.5794, 0.3486), oratoire de Germigny (Q478096 ; 47.8462, 2.2668), abbaye de Jouarre (Q334077 ; 48.9275, 3.1320, l'ancien point était à 420 m). Source : API Wikidata.
+130. Résolu : voir le point 67.
+131. Résolu : voir le point 68.
+132. Résolu : voir le point 69.
+133. Résolu : voir le point 70.
+134. Voir le point 72 (reste ouvert).
+135. Résolu : Commons (Google Art Project) indique le château de Fontainebleau, inventaire N 18, 1807 à 1808 ; la cote est ajoutée au titre. Sources : Commons ; napoleon.org.
+136. Résolu : Joconde (000PE013260) date le tableau MV 6505 de la première moitié du XIXe siècle (don de 1888, ancienne propriété Otrante) ; la fiche suit cette datation officielle.
+137. Résolu : voir le point 121.
+138. Résolu : voir le point 128.
+139. Résolu : l'inscription qui porte 806 est très probablement un faux de la restauration du XIXe siècle (Cécile Treffort, BUCEMA, hors-série 11, 2019, https://journals.openedition.org/cem/16066). La carte dit « au début du IXe siècle » (année 803, milieu de la fourchette 798 à 818 de l'épiscopat de Théodulf) et ne cite plus l'inscription.
+140. Résolu : la première attestation connue du surnom est chez Adrevald de Fleury (Miracles de saint Benoît, vers 875) ; texte et sources de la carte précisés ; 732 maintenu, 733 restant minoritaire. Source : Wikipédia FR, Charles Martel (d'après Parisse, 1997, p. 85).
+141. Résolu : voir le point 127.
+142. Résolu : voir le point 129.
+143. Résolu : voir le point 125.
+
+## Carte et itinéraires (phase 2)
+
+144. Itinéraire d'Égypte : les points de passage en mer (est de la Corse et de la Sardaigne, ouest de la Sicile à l'aller ; côte africaine, cap Bon, ouest de la Sardaigne au retour) sont approximatifs et marqués « débattu ». Hypothèse : la flotte descend à l'est de la Corse ; les frégates du retour longent l'Afrique puis remontent vers Ajaccio. À confirmer : Laurens et al., L'Expédition d'Égypte, 1989 ; journal de bord de la Muiron.
+145. Vol de l'Aigle : le point de passage au nord du cap Corse (26 au 28 février 1815) est approximatif. Sources : Waresquiel, Cent Jours, 2008.
+146. Campagne de 1805 : date du départ du camp de Boulogne fixée au 27 août 1805 (ordres de marche des 25 au 27 août, l'Empereur quitte Boulogne le 3 septembre). Sources : Chandler, The Campaigns of Napoleon, partie 6 ; Goetz, 1805: Austerlitz.
+147. Campagne de Russie : étape de Mojaïsk datée du 28 octobre 1812 et retour à Vilna du 9 décembre ; dates à recouper (Rey, L'Effroyable Tragédie, 2012 ; Zamoyski, 1812).
+148. Carte, Valais : Cliopatria compte le Valais dans l'Empire dès 1805 alors qu'il est une république indépendante de 1802 à son annexion (département du Simplon, novembre 1810). Non corrigé : écart de quelques pixels à l'échelle de l'Europe.
+149. Carte, provinces illyriennes : les tranches Cliopatria de 1809 et 1810 ne contiennent que la Dalmatie et une partie de la Carinthie ; la Carniole (Ljubljana) n'apparaît qu'avec la tranche de décembre 1810. Hypothèse : à tracer à la main pour octobre 1809.
+150. Carte, Directoire : la tranche Cliopatria de 1799 à 1801 inclut l'Égypte occupée dans le territoire français ; conservé comme lecture de l'expédition, à discuter.
+151. Carte, Confédération du Rhin : la forme Cliopatria (« Confederation of the Rhine ») est mal placée (Poméranie et Prusse) ; la piste est recomposée à partir de quinze États membres et du grand-duché de Berg recadré. Les adhésions de 1806 à 1808 suivent les tranches Cliopatria des membres, pas les dates exactes d'adhésion.
+152. Carte, 1814 : la tranche Cliopatria de l'Empire en 1814 retire la Lorraine et la Champagne (occupation alliée) ; remplacée par la France de 1815. Les gains du premier traité de Paris (Chambéry, Annecy, Landau, Sarrelouis) manquent donc en 1814 et pendant les Cent-Jours.
+
+## Scène du sacre (phase 2)
+
+153. Sacre, heure du couronnement : hypothèse retenue, vers 13 h solaires ; napoleon.org donne midi pour l'entrée et 15 h 30 pour les vivats, pas l'heure du couronnement.
+154. Sacre, ciel de l'après-midi : hypothèse retenue, soleil d'hiver bas, brume froide ; seule la neige de la nuit est attestée ; parti pris annoncé dans le cartel de la croisée.
+155. Sacre, axe de la cathédrale : hypothèse retenue, relèvement de 114° ; « est-sud-est » sans chiffre ; à mesurer sur une orthophoto IGN.
+156. Sacre, porche : hypothèse retenue, pavillon à deux étages d'après la planche de l'arrivée ; lecture d'un « portique triomphal à quatre grands arcs gothiques » plausible mais non vérifiée ; nombre exact de statues et leurs sujets inconnus.
+157. Sacre, marches du grand trône : hypothèse retenue, 24 ; les gravures en montrent plus de vingt.
+158. Sacre, girandoles : hypothèse retenue, une par pilier au niveau des tribunes ; d'après le projet de Percier pour le chœur, étendu à la nef.
+159. Sacre, tracé des galeries et place de la rotonde : hypothèse retenue, flanc sud, rotonde à l'est ; galeries attestées, tracé exact inconnu.
+160. Sacre, nombre d'invités : hypothèse retenue, entre 15 000 et 20 000 ; napoleon.org donne 20 000 (chronologie) et 15 000 (chronique de C. Collard).
+161. Sacre, couronnement de lui-même convenu d'avance : hypothèse retenue, « selon la plupart des historiens » ; à appuyer d'une citation précise (Lentz).
+162. Sacre, couronne posée par Napoléon : hypothèse retenue, couronne de laurier d'or bénie par le pape ; titres des estampes de la collection de Vinck ; à vérifier dans Ségur.
+163. Sacre, vitrerie blanche : hypothèse retenue, XVIIIe siècle, atelier Le Vieil ; dates non confirmées en ligne.
+164. Sacre, rose sud : hypothèse retenue, reconstruite au XVIIIe siècle (cardinal de Noailles) ; dates à vérifier (Erlande-Brandenburg).
+165. Sacre, places des dignitaires : hypothèse retenue, simplifiées ; ordre de Basset (impératrice à droite de l'empereur, princes à gauche) respecté au grand trône, simplifié ailleurs.
+
+## Scène d'Austerlitz (phase 2)
+
+166. Austerlitz, vidange de l'étang de Satschan : hypothèse : vidé « quelques jours après » sur ordre de Napoléon, deux ou trois corps d'hommes et quelque 150 chevaux (Holland et Poole, 1902, cités par l'article anglais de Wikipédia). Les dates « du 8 au 12 décembre » n'ont pas de source retrouvée et sont retirées. Canons repêchés : de 38 à plus de 100 selon les auteurs. Pertes russes par noyade : de 200 à 2 000. À relire dans Goetz 2005 et Duffy 1977.
+167. Austerlitz, forme et emprise des étangs en 1805 : hypothèse : trois ellipses (Satschan, 2,3 × 0,7 km, sur la Littawa entre Augezd et Satschan ; Menitz, 2,6 × 1 km, sur le bas Goldbach entre Telnitz et Menitz ; Kobelnitz, 1 × 0,4 km, sur le Goldbach au nord de Kobelnitz), dans les fonds actuels. À vérifier sur le premier relevé militaire (1764 à 1768, mapire.eu) et sur les cartes de Goetz, Duffy et Castle ; l'étang de Kobelnitz est le plus incertain. La digue entre Satschan et Menitz n'est pas modélisée à part.
+168. Austerlitz, prisonniers : 12 000 retenus (Chandler, Goetz) ; jusqu'à 20 000 dans le bulletin et les ouvrages anciens.
+169. Austerlitz, effectifs : 72 000 Français et 89 000 coalisés dans la maquette (publiés : 65 000 à 75 000 et 73 000 à 89 000). Le 17e léger est compté à part de Suchet ; Friant a peut-être 3 200 présents ; la 3e colonne est prise à 7 800 (Wikipédia en donne 10 000). À aligner sur l'ordre de bataille de napoleon-series.org et les annexes de Goetz.
+170. Austerlitz, heures : chronologie de l'article français de Wikipédia, recoupée avec l'article anglais (brume dissipée vers 8 h 45, combats de Telnitz « vers 8 h ») ; Duffy et Goetz placent la première attaque de Kienmayer vers 7 h.
+171. Austerlitz, paroles : « Moins de vingt minutes, Sire » : Ségur, Histoire et mémoires, t. II, repris par Thiers ; tradition.
+172. Austerlitz, charge de la Garde russe : suit le bulletin (« chargé par la garde impériale russe à cheval ») et la tradition russe (gardes à cheval, tableau de Mazourovski) ; les chevaliers-gardes arrivent ensuite et sont culbutés par Rapp. L'ordre exact des charges varie selon les auteurs.
+173. Austerlitz, uniformes : mousquetaires russes en bicorne (shako en cours de distribution en 1805 selon une partie des auteurs ; capote gris-brun souvent portée en hiver, non montrée) ; Garde russe entièrement en bonnet de grenadier modèle 1802 (ses compagnies de mousquetaires gardaient le bicorne) ; cavalerie coalisée en habit blanc (simplification pour les hussards autrichiens et les uhlans) ; artillerie de la 4e colonne montrée autrichienne (il y avait aussi des batteries russes) ; colback pour toute la cavalerie légère française (les chasseurs de ligne portaient le shako).
+174. Austerlitz, sources à vérifier : alombert et Colin, La campagne de 1805 en Allemagne, retiré des cartels faute d'avoir vérifié qu'il couvre le 2 décembre ; la référence « Mikaberidze 2006 », introuvable, est remplacée par l'Histoire officielle russe traduite par Mikaberidze (Helion, 2022).
+175. Austerlitz, Staré Vinohrady : sommet placé à (1 700, 2 300), lu sur le relief ; à confirmer sur la carte.
+176. Austerlitz, relief : le GLO-30 est un modèle de surface : bâtiments, bois et remblais modernes laissent des traces de quelques mètres ; le tumulus du monument de la Paix peut relever le Pratzeberg (325 m dans le modèle, 324 m usuellement).
+177. Austerlitz, cours d'eau : tracés actuels, rectifiés par endroits aux XIXe et XXe siècles.
+178. Austerlitz, itinéraires des unités : restitution simplifiée à l'échelle de la division.
+179. Austerlitz, vue rasante grossie 1,5 fois : choix de lisibilité fait sans validation de l'utilisateur, réglable par un seul nombre (`groundScale` dans `battle.ts`). Autre option : doubler les figurines proches (1 figurine pour 10 soldats à moins de 300 m). À trancher par l'utilisateur.
