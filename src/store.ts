@@ -1,0 +1,91 @@
+import { create } from 'zustand'
+import { routeFromLocation, routeToHash, type Route } from './core/route.ts'
+import { SITE } from './site.ts'
+import { initialQuality, type QualityTier } from './stage/quality.ts'
+import { homeView, type Viewport } from './timeline/viewport.ts'
+
+export interface MapMark {
+  lon: number
+  lat: number
+  kind: 'guess' | 'answer'
+}
+
+interface AppState {
+  route: Route
+  mapPick: { lon: number; lat: number } | null
+  mapMarks: MapMark[]
+  setMapPick: (pick: { lon: number; lat: number } | null) => void
+  setMapMarks: (marks: MapMark[]) => void
+  view: Viewport
+  quality: QualityTier
+  scenePoint: number
+  failedScene: string | null
+  failure: string | null
+  soundOn: boolean
+  setSoundOn: (soundOn: boolean) => void
+  setRoute: (route: Route) => void
+  setScenePoint: (point: number) => void
+  setFailedScene: (id: string | null, failure?: string) => void
+  setView: (view: Viewport) => void
+  setQuality: (quality: QualityTier) => void
+}
+
+const SOUND_KEY = 'france.sound'
+
+function storedSound(): boolean {
+  try {
+    return localStorage.getItem(SOUND_KEY) === 'on'
+  } catch {
+    return false
+  }
+}
+
+function storeSound(soundOn: boolean) {
+  try {
+    localStorage.setItem(SOUND_KEY, soundOn ? 'on' : 'off')
+  } catch {
+    return
+  }
+}
+
+function isSameRoute(first: Route, second: Route): boolean {
+  return routeToHash(first) === routeToHash(second)
+}
+
+export function currentRoute(): Route {
+  return routeFromLocation(location.pathname, location.hash, SITE.base)
+}
+
+export const useApp = create<AppState>()((set) => ({
+  route: currentRoute(),
+  view: homeView(),
+  quality: initialQuality(),
+  scenePoint: 0,
+  failedScene: null,
+  failure: null,
+  mapPick: null,
+  mapMarks: [],
+  setMapPick: (mapPick) => set({ mapPick }),
+  setMapMarks: (mapMarks) => set({ mapMarks }),
+  soundOn: storedSound(),
+  setSoundOn: (soundOn) => {
+    storeSound(soundOn)
+    set({ soundOn })
+  },
+  setRoute: (route) =>
+    set((state) => {
+      const marks = route.name === 'learn' ? {} : { mapMarks: [], mapPick: null }
+      if (route.name !== 'scene') return { route, failedScene: null, ...marks }
+      return isSameRoute(state.route, route) ? { route, ...marks } : { route, scenePoint: 0, ...marks }
+    }),
+  setScenePoint: (scenePoint) => set({ scenePoint }),
+  setFailedScene: (failedScene, failure) => set({ failedScene, failure: failure ?? null }),
+  setView: (view) => set({ view }),
+  setQuality: (quality) => set({ quality }),
+}))
+
+export function navigate(route: Route) {
+  const url = `${SITE.base}${routeToHash(route)}`
+  if (`${location.pathname}${location.hash}` !== url) history.pushState(null, '', url)
+  useApp.getState().setRoute(route)
+}
