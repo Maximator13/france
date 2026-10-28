@@ -14,6 +14,10 @@ const WALKER_PREFIX = 'walker_'
 const SMOKE_PREFIX = 'smoke_'
 const FLOCK_PREFIX = 'birds_'
 const ASH_PREFIX = 'ash_'
+const SHAFT_PREFIX = 'shaft_'
+const LAMP_PREFIX = 'lamp_'
+const CANDLE_PREFIX = 'candle_'
+const TARGET_SUFFIX = '_target'
 const DISPOSE_DELAY_MS = 1000
 
 const pendingDisposals = new Map<string, ReturnType<typeof setTimeout>>()
@@ -41,6 +45,26 @@ export interface SceneModel {
   flocks: Vector3[]
   ashes: Vector3[]
   anchors: Map<string, Vector3>
+  shafts: Shaft[]
+  lamps: Vector3[]
+  candles: Vector3[]
+}
+
+export interface Shaft {
+  from: Vector3
+  to: Vector3
+  radius: number
+}
+
+export function pairShafts(nodes: Map<string, { position: Vector3; radius: unknown }>): Shaft[] {
+  const shafts: Shaft[] = []
+  for (const [name, node] of nodes) {
+    if (name.endsWith(TARGET_SUFFIX)) continue
+    const target = nodes.get(`${name}${TARGET_SUFFIX}`)
+    if (!target) continue
+    shafts.push({ from: node.position, to: target.position, radius: typeof node.radius === 'number' ? node.radius : 2 })
+  }
+  return shafts
 }
 
 const ANCHOR_NAMES = new Set(['oculus', 'sunbeam_target', 'eruption_vent', 'beacon'])
@@ -67,8 +91,14 @@ function readModel(root: Object3D): SceneModel {
   const ashes: Vector3[] = []
   const bounds = new Box3()
   const anchors = new Map<string, Vector3>()
+  const shaftNodes = new Map<string, { position: Vector3; radius: unknown }>()
+  const lamps: Vector3[] = []
+  const candles: Vector3[] = []
   root.traverse((child) => {
     if (ANCHOR_NAMES.has(child.name)) anchors.set(child.name, worldPosition(child))
+    if (child.name.startsWith(SHAFT_PREFIX)) shaftNodes.set(child.name, { position: worldPosition(child), radius: child.userData.radius })
+    if (child.name.startsWith(LAMP_PREFIX)) lamps.push(worldPosition(child))
+    if (child.name.startsWith(CANDLE_PREFIX)) candles.push(worldPosition(child))
     if (child.name.startsWith(MARKER_PREFIX)) markers.set(child.name.slice(MARKER_PREFIX.length), child)
     else if (child.name.startsWith(ROUTE_PREFIX)) named.push({ name: child.name, position: worldPosition(child) })
     else if (child.name.startsWith(SMOKE_PREFIX)) smokes.push(worldPosition(child))
@@ -78,7 +108,7 @@ function readModel(root: Object3D): SceneModel {
     if (child.name.startsWith(WALKER_PREFIX)) walkers.push(child)
     else bounds.expandByObject(child)
   })
-  return { root, markers, bounds, routes: groupRoutes(named, ROUTE_PREFIX), walkers, smokes, flocks, ashes, anchors }
+  return { root, markers, bounds, routes: groupRoutes(named, ROUTE_PREFIX), walkers, smokes, flocks, ashes, anchors, shafts: pairShafts(shaftNodes), lamps, candles }
 }
 
 function materialsOf(mesh: Mesh): Material[] {

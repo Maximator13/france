@@ -21,10 +21,11 @@ import { isShown, phaseIndexAt, placeFigure, stateAt, type Placement, type Slot,
 const ACROSS = 10
 const DEEP = 8
 const FOOTPRINT_LIFT = 3
+const FOOTPRINT_OPACITY = 0.16
 const HIDDEN_DEPTH = -10000
 const ARROW_LIFT = 9
-const ARROW_WIDTH: Record<Arrow['kind'], number> = { move: 46, attack: 64, flee: 38 }
-const ARROW_OPACITY: Record<Arrow['kind'], number> = { move: 0.78, attack: 0.92, flee: 0.6 }
+const ARROW_WIDTH: Record<Arrow['kind'], number> = { move: 28, attack: 38, flee: 24, fire: 18 }
+const ARROW_OPACITY: Record<Arrow['kind'], number> = { move: 0.7, attack: 0.8, flee: 0.55, fire: 0.75 }
 const GROW_SHARE = 0.55
 const FADE_TIME_CONSTANT = 0.35
 
@@ -115,10 +116,10 @@ export function Footprints({ battle, tracks, field }: { battle: Battle; tracks: 
         const geometry = new BufferGeometry()
         geometry.setAttribute('position', new BufferAttribute(new Float32Array(units.length * slots.length * 3), 3))
         geometry.setIndex(new BufferAttribute(footprintIndex(units.length), 1))
-        const mesh = new Mesh(geometry, overlayMaterial(battle.sides[side].color, 0.34))
+        const mesh = new Mesh(geometry, overlayMaterial(battle.sides[side].color, FOOTPRINT_OPACITY))
         mesh.frustumCulled = false
         mesh.renderOrder = 5
-        return { units, mesh, opacity: 0.34 }
+        return { units, mesh, opacity: FOOTPRINT_OPACITY }
       }),
     [battle, slots],
   )
@@ -170,7 +171,7 @@ function arrowGeometry(arrow: Arrow, field: HeightField): BufferGeometry {
     const nz = tangent.x * (width / 2)
     positions.push(point.x + nx, lift(point.x + nx, point.z + nz), point.z + nz)
     positions.push(point.x - nx, lift(point.x - nx, point.z - nz), point.z - nz)
-    if (step > 0) {
+    if (step > 0 && (arrow.kind !== 'fire' || Math.floor(step / 2) % 2 === 0)) {
       const base = (step - 1) * 2
       indices.push(base, base + 1, base + 2, base + 1, base + 3, base + 2)
     }

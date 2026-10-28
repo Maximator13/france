@@ -12,5 +12,7 @@ export const BATTLE_UI = {
   ground: 'Vue rasante',
   scale: (soldiers: number) => `1 figurine = ${soldiers} soldats`,
   exaggerated: (factor: number) => `taille des figurines exagérée (× ${factor})`,
+  smoke: 'Fumée de poudre',
+  smokeLevels: { off: 'Aucune', light: 'Légère', dense: 'Dense' },
   help: 'Espace : lecture ou pause. Glisser : tourner la vue. Molette ou pincement : rapprocher.',
 }

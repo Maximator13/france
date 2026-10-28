@@ -111,6 +111,18 @@
   text-shadow: 0 1px 3px rgb(0 0 0 / 0.9);
 }
 
+.battle__smoke {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-left: auto;
+  text-shadow: none;
+}
+
+.battle__smoke > span {
+  margin-right: 0.2rem;
+}
+
 .battle__note {
   color: var(--ink-muted);
   font-style: italic;
@@ -163,7 +175,7 @@
   border-bottom: 2px solid transparent;
   padding: 0.1rem 0.4rem;
   border-radius: 2px;
-  background: rgb(11 16 23 / 0.72);
+  background: rgb(11 16 23 / 0.86);
   color: var(--ink);
   font: 400 0.7rem/1.2 var(--font-display);
   letter-spacing: 0.05em;
@@ -218,5 +230,22 @@
 
   .battle-label {
     font-size: 0.6rem;
+  }
+
+  .battle__counters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 0.3rem;
+  }
+
+  .battle__counters li {
+    flex: 0 0 auto;
+    max-width: 9.5rem;
+    padding: 0.2rem 0.45rem;
+    font-size: 0.62rem;
+  }
+
+  .battle__counters strong {
+    font-size: 0.85rem;
   }
 }

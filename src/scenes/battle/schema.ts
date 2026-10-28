@@ -2,11 +2,12 @@ import { z } from 'zod'
 
 export const SIDES = ['a', 'b'] as const
 export const ACTIONS = ['stand', 'march', 'charge', 'fight', 'skirmish', 'flee', 'surrender', 'camp'] as const
-export const ARROW_KINDS = ['move', 'attack', 'flee'] as const
+export const ARROW_KINDS = ['move', 'attack', 'flee', 'fire'] as const
 
 const slug = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'expected a lowercase ascii slug')
 const label = z.string().trim().min(1)
 const point = z.tuple([z.number(), z.number()])
+const color = z.string().regex(/^#[0-9a-f]{6}$/)
 
 const stateFields = {
   at: point,
@@ -76,9 +77,15 @@ export const phaseSchema = z.strictObject({
   seconds: z.number().positive(),
   focus: point,
   span: z.number().positive(),
-  ground: z.strictObject({ unit: slug, along: z.number(), across: z.number(), look: z.number().positive(), turn: z.number().optional() }),
+  ground: z.union([
+    z.strictObject({ unit: slug, along: z.number(), across: z.number(), look: z.number().positive(), turn: z.number().optional(), lift: z.number().positive().optional() }),
+    z.strictObject({ eye: point, target: point, lift: z.number().positive().optional(), fov: z.number().min(10).max(80).optional() }),
+  ]),
+  view: z.strictObject({ yaw: z.number().min(-180).max(180), tilt: z.number().min(10).max(85) }).optional(),
+  light: z.strictObject({ sun: z.number().min(0), color: color, fog: color }).optional(),
   arrows: z.array(arrowSchema),
   counters: z.array(counterSchema).optional(),
+  mist: z.number().min(0).max(1).optional(),
 })
 
 export const battleSchema = z
@@ -87,6 +94,7 @@ export const battleSchema = z
     latitude: z.number().min(-90).max(90),
     declination: z.number().min(-24).max(24),
     tacticalScale: z.number().min(1),
+    groundScale: z.number().min(1).optional(),
     sides: z.strictObject({
       a: z.strictObject({ label, color: z.string().regex(/^#[0-9a-f]{6}$/) }),
       b: z.strictObject({ label, color: z.string().regex(/^#[0-9a-f]{6}$/) }),
@@ -99,7 +107,7 @@ export const battleSchema = z
     'a move refers to a phase that does not exist',
   )
   .refine((battle) => new Set(battle.units.map((unit) => unit.id)).size === battle.units.length, 'duplicate unit id')
-  .refine((battle) => battle.phases.every((phase) => battle.units.some((unit) => unit.id === phase.ground.unit)), 'ground view on an unknown unit')
+  .refine((battle) => battle.phases.every((phase) => !('unit' in phase.ground) || battle.units.some((unit) => 'unit' in phase.ground && unit.id === phase.ground.unit)), 'ground view on an unknown unit')
   .refine((battle) => new Set(battle.phases.map((phase) => phase.id)).size === battle.phases.length, 'duplicate phase id')
 
 export type Point = z.infer<typeof point>
@@ -110,6 +118,8 @@ export type Unit = z.infer<typeof unitSchema>
 export type Arrow = z.infer<typeof arrowSchema>
 export type Counter = z.infer<typeof counterSchema>
 export type Phase = z.infer<typeof phaseSchema>
+export type GroundView = Phase['ground']
+export type PhaseLight = NonNullable<Phase['light']>
 export type Battle = z.infer<typeof battleSchema>
 
 export function parseBattle(input: unknown): Battle {

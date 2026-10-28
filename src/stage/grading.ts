@@ -123,7 +123,7 @@ export const ERA_GRADING: Record<EraId, Grading> = {
   },
 }
 
-export const SCENE_LOOK = { exposure: 1 }
+export const SCENE_LOOK: { exposure: number; saturation: number; gain: Rgb } = { exposure: 1, saturation: 1, gain: [1, 1, 1] }
 
 const TRANSITION_YEARS = 20
 

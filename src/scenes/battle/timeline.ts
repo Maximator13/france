@@ -52,6 +52,7 @@ const DEGREES = Math.PI / 180
 const LOSS_SAMPLES_PER_PHASE = 200
 const POSITION_JITTER = 1.2
 const SLOT_JITTER = 0.22
+const MIST_BLEND = 0.6
 
 export function seeded(index: number): number {
   const value = Math.sin(index * 127.1 + 311.7) * 43758.5453
@@ -322,4 +323,36 @@ export function sunAt(hour: number, latitude: number, declination: number): { az
 
 export function counterValue(from: number, to: number, progress: number): number {
   return Math.round(from + (to - from) * Math.min(1, Math.max(0, progress)))
+}
+
+export function phaseBlend(phases: number, time: number): { index: number; previous: number; t: number } {
+  const index = phaseIndexAt(time, phases)
+  return { index, previous: Math.max(0, index - 1), t: index === 0 ? 1 : ease((time - index) / MIST_BLEND) }
+}
+
+export function mistAt(phases: readonly { mist?: number | undefined }[], time: number): number {
+  if (phases.length === 0) return 0
+  const { index, previous, t } = phaseBlend(phases.length, time)
+  const from = phases[previous]!.mist ?? 0
+  return from + ((phases[index]!.mist ?? 0) - from) * t
+}
+
+export interface Light {
+  sun: number
+  color: string
+  fog: string
+}
+
+function mixHex(from: string, to: string, t: number): string {
+  const channel = (hex: string, shift: number) => (parseInt(hex.slice(1), 16) >> shift) & 255
+  const value = [16, 8, 0].map((shift) => Math.round(channel(from, shift) + (channel(to, shift) - channel(from, shift)) * t))
+  return `#${value.map((part) => part.toString(16).padStart(2, '0')).join('')}`
+}
+
+export function lightAt(phases: readonly { light?: Light | undefined }[], time: number, fallback: Light): Light {
+  if (phases.length === 0) return fallback
+  const { index, previous, t } = phaseBlend(phases.length, time)
+  const from = phases[previous]!.light ?? fallback
+  const to = phases[index]!.light ?? fallback
+  return { sun: from.sun + (to.sun - from.sun) * t, color: mixHex(from.color, to.color, t), fog: mixHex(from.fog, to.fog, t) }
 }

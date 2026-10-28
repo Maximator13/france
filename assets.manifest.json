@@ -1,4 +1,19 @@
 {
   "version": 1,
-  "assets": []
+  "assets": [
+    {
+      "path": "scenes/austerlitz/austerlitz.glb",
+      "bytes": 5670600,
+      "sha256": "5a76f8f57f90ba2a7bf866014f4f576ebeecce3eb90634febde8feb2794534e7",
+      "release": "assets-v1",
+      "file": "5a76f8f57f90-austerlitz.glb"
+    },
+    {
+      "path": "scenes/sacre-de-napoleon/sacre-de-napoleon.glb",
+      "bytes": 3978268,
+      "sha256": "cb4586bf6aba52f1dc75eccbed176cebfccd4d5a1256ed8033714278b390572e",
+      "release": "assets-v1",
+      "file": "cb4586bf6aba-sacre-de-napoleon.glb"
+    }
+  ]
 }

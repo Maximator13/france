@@ -28,12 +28,12 @@ const fragmentShader = [
   '}',
 ].join('\n')
 
-export function LightShaft({ from, to, radius }: { from: Vector3; to: Vector3; radius: number }) {
+export function LightShaft({ from, to, radius, strength = 0.22 }: { from: Vector3; to: Vector3; radius: number; strength?: number }) {
   const shaft = useMemo(() => {
     const length = from.distanceTo(to)
     const geometry = new CylinderGeometry(radius, radius * 1.08, length, 48, 1, true)
     const material = new ShaderMaterial({
-      uniforms: { color: { value: new Vector3(1, 0.92, 0.78) }, strength: { value: 0.22 } },
+      uniforms: { color: { value: new Vector3(1, 0.92, 0.78) }, strength: { value: strength } },
       vertexShader,
       fragmentShader,
       transparent: true,
@@ -48,7 +48,7 @@ export function LightShaft({ from, to, radius }: { from: Vector3; to: Vector3; r
     mesh.applyMatrix4(new Matrix4().compose(middle, rotation, new Vector3(1, 1, 1)))
     mesh.renderOrder = 3
     return mesh
-  }, [from, to, radius])
+  }, [from, to, radius, strength])
   useEffect(
     () => () => {
       shaft.geometry.dispose()

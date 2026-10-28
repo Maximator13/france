@@ -1,10 +1,10 @@
 import { useFrame } from '@react-three/fiber'
 import { useEffect, useMemo, useRef } from 'react'
-import { Mesh, Vector3, type BufferGeometry, type Object3D } from 'three'
+import { BackSide, FogExp2, Mesh, MeshBasicMaterial, SphereGeometry, Vector3, type BufferGeometry, type Object3D } from 'three'
 import { prefersReducedMotion } from '../../core/motion.ts'
 import { QUALITY } from '../../stage/quality.ts'
 import { useApp } from '../../store.ts'
-import { Atmosphere, type HazeSettings } from '../kit/Atmosphere.tsx'
+import { Atmosphere, type HazeSettings, type SkySettings } from '../kit/Atmosphere.tsx'
 import { standingGeometry } from '../kit/Life.tsx'
 import { useSceneModel } from '../kit/model.ts'
 import type { SceneProps } from '../registry.ts'
@@ -14,9 +14,11 @@ import { addGroundDetail } from './ground.ts'
 import { rasterize, type HeightField } from './heightfield.ts'
 import { Labels } from './Labels.tsx'
 import { Arrows, Footprints } from './Markings.tsx'
+import { Mist, type MistSettings } from './Mist.tsx'
 import type { Battle } from './schema.ts'
+import { Smoke, type SmokeSettings } from './Smoke.tsx'
 import { useBattle } from './store.ts'
-import { phaseIndexAt, pointForTime, sunAt, timeForPoint } from './timeline.ts'
+import { lightAt, mistAt, phaseIndexAt, pointForTime, sunAt, timeForPoint, type Light } from './timeline.ts'
 import { Troops, useTracks, type TroopTemplate } from './Troops.tsx'
 
 export interface BattleConfig {
@@ -25,6 +27,9 @@ export interface BattleConfig {
   haze: HazeSettings
   sunColor: string
   sunIntensity: number
+  mist?: MistSettings
+  sky?: SkySettings
+  smoke?: SmokeSettings
 }
 
 const TROOP_PREFIX = 'troop_'
@@ -33,6 +38,10 @@ const GROUND = 'ground'
 const HEIGHT_CELL = 10
 const AUTOPLAY_DELAY_MS = 1800
 const END_EPSILON = 1e-4
+const LIGHT_STEPS = 20
+const TACTICAL_HAZE = 0.35
+const DOME_RADIUS = 20000
+const DOME_MIST = 0.3
 
 function worldPositions(mesh: Mesh): Float32Array {
   mesh.updateWorldMatrix(true, false)
@@ -142,6 +151,35 @@ function usePlayback(battle: Battle, reducedMotion: boolean) {
   })
 }
 
+function fogDome(): Mesh {
+  const dome = new Mesh(new SphereGeometry(DOME_RADIUS, 32, 16), new MeshBasicMaterial({ side: BackSide, transparent: true, depthWrite: false, fog: false }))
+  dome.frustumCulled = false
+  dome.renderOrder = -1
+  return dome
+}
+
+function updateHaze(scene: Object3D & { fog: unknown }, dome: Mesh, battle: Battle, config: BattleConfig, fallback: Light, camera: Object3D) {
+  const { time, view } = useBattle.getState()
+  const mist = config.mist ? mistAt(battle.phases, time) : 0
+  const fog = lightAt(battle.phases, time, fallback).fog
+  if (scene.fog instanceof FogExp2) {
+    scene.fog.density = config.haze.density * (view === 'tactical' ? TACTICAL_HAZE : 1) * (1 + mist * (config.mist?.fog ?? 0))
+    scene.fog.color.set(fog)
+  }
+  const material = dome.material as MeshBasicMaterial
+  material.color.set(fog)
+  material.opacity = Math.min(1, Math.max(0, (mist - DOME_MIST) * 2.5))
+  dome.visible = material.opacity > 0.01
+  dome.position.copy(camera.position)
+}
+
+function Haze({ battle, config }: { battle: Battle; config: BattleConfig }) {
+  const fallback = useMemo(() => ({ sun: config.sunIntensity, color: config.sunColor, fog: config.haze.color }), [config])
+  const dome = useMemo(() => fogDome(), [])
+  useFrame(({ scene, camera }) => updateHaze(scene, dome, battle, config, fallback, camera))
+  return <primitive object={dome} />
+}
+
 export function Battlefield({ config, scene, insets, quality }: SceneProps & { config: BattleConfig }) {
   const { battle } = config
   const shadows = QUALITY[quality].shadows
@@ -150,23 +188,28 @@ export function Battlefield({ config, scene, insets, quality }: SceneProps & { c
   const { templates, field } = useMemo(() => readBattlefield(model.root), [model])
   const tracks = useTracks(battle)
   const phaseIndex = useBattle((state) => phaseIndexAt(state.time, battle.phases.length))
+  const lightTime = useBattle((state) => Math.round(state.time * LIGHT_STEPS) / LIGHT_STEPS)
   const sun = useMemo(() => {
     const phase = battle.phases[phaseIndex]!
     const position = sunAt(phase.hour, battle.latitude, battle.declination)
-    return { ...position, color: config.sunColor, intensity: config.sunIntensity }
-  }, [battle, phaseIndex, config])
+    const light = lightAt(battle.phases, lightTime, { sun: config.sunIntensity, color: config.sunColor, fog: config.haze.color })
+    return { ...position, color: light.color, intensity: light.sun }
+  }, [battle, phaseIndex, lightTime, config])
   usePlayback(battle, reducedMotion)
 
   return (
     <>
-      <Atmosphere sun={sun} haze={config.haze} shadows={shadows} />
+      <Atmosphere sun={sun} haze={config.haze} shadows={shadows} {...(config.sky ? { sky: config.sky } : {})} />
       <primitive object={model.root} />
       <Troops battle={battle} tracks={tracks} templates={templates} field={field} shadows={shadows} reducedMotion={reducedMotion} />
       <Footprints battle={battle} tracks={tracks} field={field} />
       <Arrows battle={battle} field={field} />
+      <Haze battle={battle} config={config} />
+      {config.mist && <Mist battle={battle} field={field} settings={config.mist} sun={sun} />}
+      {config.smoke && <Smoke battle={battle} tracks={tracks} field={field} settings={config.smoke} reducedMotion={reducedMotion} />}
       <Labels battle={battle} tracks={tracks} field={field} insets={insets} />
       <CameraRig battle={battle} tracks={tracks} field={field} insets={insets} reducedMotion={reducedMotion} />
-      <Controls battle={battle} scene={scene} insets={insets} />
+      <Controls battle={battle} scene={scene} insets={insets} smoke={config.smoke !== undefined} />
     </>
   )
 }

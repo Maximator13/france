@@ -5,7 +5,7 @@ import type { Scene } from '../../data/schema.ts'
 import { frenchSpacing } from '../../core/typography.ts'
 import type { UiInsets } from '../../map/MapStage.tsx'
 import { SIDES, type Battle } from './schema.ts'
-import { useBattle, type BattleView } from './store.ts'
+import { useBattle, type BattleView, type SmokeLevel } from './store.ts'
 import { counterValue, phaseIndexAt } from './timeline.ts'
 import './battle.css'
 
@@ -37,6 +37,22 @@ function ViewSwitch() {
       {(['tactical', 'ground'] as const).map((option) => (
         <button key={option} type="button" className="battle__view" aria-pressed={view === option} onClick={() => choose(option)}>
           {BATTLE_UI[option]}
+        </button>
+      ))}
+    </div>
+  )
+}
+
+const SMOKE_LEVELS: SmokeLevel[] = ['off', 'light', 'dense']
+
+function SmokeSwitch() {
+  const smoke = useBattle((state) => state.smoke)
+  return (
+    <div className="battle__smoke" role="group" aria-label={BATTLE_UI.smoke}>
+      <span>{BATTLE_UI.smoke}</span>
+      {SMOKE_LEVELS.map((level) => (
+        <button key={level} type="button" className="battle__view" aria-pressed={smoke === level} onClick={() => useBattle.getState().setSmoke(level)}>
+          {BATTLE_UI.smokeLevels[level]}
         </button>
       ))}
     </div>
@@ -94,23 +110,25 @@ function Scrubber({ battle, scene }: { battle: Battle; scene: Scene }) {
   )
 }
 
-function Legend({ battle }: { battle: Battle }) {
+function Legend({ battle, smoke }: { battle: Battle; smoke: boolean }) {
   const view = useBattle((state) => state.view)
   return (
-    <p className="battle__legend">
+    <div className="battle__legend">
       <span>{frenchSpacing(BATTLE_UI.scale(battle.scale))}</span>
       {view === 'tactical' && <span className="battle__note">{frenchSpacing(BATTLE_UI.exaggerated(battle.tacticalScale))}</span>}
+      {view === 'ground' && (battle.groundScale ?? 1) > 1 && <span className="battle__note">{frenchSpacing(BATTLE_UI.exaggerated(battle.groundScale!))}</span>}
       {SIDES.map((side) => (
         <span key={side} className="battle__side">
           <i style={{ background: battle.sides[side].color }} />
           {battle.sides[side].label}
         </span>
       ))}
-    </p>
+      {smoke && <SmokeSwitch />}
+    </div>
   )
 }
 
-function Panel({ battle, scene, insets }: { battle: Battle; scene: Scene; insets: UiInsets }) {
+function Panel({ battle, scene, insets, smoke }: { battle: Battle; scene: Scene; insets: UiInsets; smoke: boolean }) {
   const element = useRef<HTMLElement>(null)
   useEffect(() => {
     const target = element.current
@@ -132,7 +150,7 @@ function Panel({ battle, scene, insets }: { battle: Battle; scene: Scene; insets
         <Scrubber battle={battle} scene={scene} />
         <ViewSwitch />
       </div>
-      <Legend battle={battle} />
+      <Legend battle={battle} smoke={smoke} />
       <p className="battle__help">{frenchSpacing(BATTLE_UI.help)}</p>
     </section>
   )
@@ -142,7 +160,7 @@ function isTyping(target: EventTarget | null): boolean {
   return target instanceof Element && target.closest('input, textarea, select, button') !== null
 }
 
-export function Controls({ battle, scene, insets }: { battle: Battle; scene: Scene; insets: UiInsets }) {
+export function Controls({ battle, scene, insets, smoke = false }: { battle: Battle; scene: Scene; insets: UiInsets; smoke?: boolean }) {
   const root = useRef<Root | null>(null)
 
   useEffect(() => {
@@ -161,8 +179,8 @@ export function Controls({ battle, scene, insets }: { battle: Battle; scene: Sce
   }, [])
 
   useEffect(() => {
-    root.current?.render(<Panel battle={battle} scene={scene} insets={insets} />)
-  }, [battle, scene, insets])
+    root.current?.render(<Panel battle={battle} scene={scene} insets={insets} smoke={smoke} />)
+  }, [battle, scene, insets, smoke])
 
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {

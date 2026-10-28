@@ -1,6 +1,8 @@
 import { expect, test, type Page } from '@playwright/test'
 import { mkdirSync, writeFileSync } from 'node:fs'
+import { eras } from '../src/data/eras.ts'
 import { events } from '../src/data/events.ts'
+import { scenes } from '../src/data/scenes.ts'
 
 const FIRST_SCREEN_BUDGET = 5_000_000
 const SETTLE_MS = 2_000
@@ -86,6 +88,7 @@ test.describe('events', () => {
     const event = events.find((candidate) => candidate.importance === 1) ?? events[0]!
     await page.goto(`./#/evenement/${event.id}`)
     await expect(page.getByRole('heading', { name: event.title, level: 2 })).toBeVisible()
+    await expect(page.locator('.era-caption__name')).toHaveText(eras.find((era) => era.id === event.era)!.name)
     await page.reload()
     await expect(page.getByRole('heading', { name: event.title, level: 2 })).toBeVisible()
     await page.keyboard.press('Escape')
@@ -96,4 +99,19 @@ test.describe('events', () => {
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', new RegExp(`/evenement/${event.id}/$`))
     expect(errors).toEqual([])
   })
+})
+
+test.describe('scenes', () => {
+  for (const scene of scenes.filter((candidate) => candidate.status === 'ready')) {
+    test(`the ${scene.id} scene loads its model`, async ({ page }) => {
+      const errors = watchErrors(page)
+      const model = page.waitForResponse((response) => response.url().endsWith(`/${scene.id}.glb`) && response.ok(), { timeout: 60_000 })
+      await page.goto(`./#/scene/${scene.id}`)
+      await expect(page.getByRole('heading', { name: scene.title, level: 2 })).toBeVisible()
+      await model
+      await page.waitForTimeout(SETTLE_MS)
+      await expect(page.locator('.scene__failure')).toHaveCount(0)
+      expect(errors).toEqual([])
+    })
+  }
 })

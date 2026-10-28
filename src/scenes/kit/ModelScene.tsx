@@ -1,12 +1,13 @@
 import { useFrame } from '@react-three/fiber'
 import { useEffect, useMemo } from 'react'
 import { Vector3, type Object3D } from 'three'
-import { SCENE_LOOK } from '../../stage/grading.ts'
+import { SCENE_LOOK, type Rgb } from '../../stage/grading.ts'
 import { QUALITY } from '../../stage/quality.ts'
 import type { SceneProps } from '../registry.ts'
 import { Atmosphere, type HazeSettings, type InteriorSettings, type SkySettings, type SkySun, type SunSettings } from './Atmosphere.tsx'
 import { GuidedRail } from './GuidedRail.tsx'
 import { Life } from './Life.tsx'
+import { CandleGlow } from './CandleGlow.tsx'
 import { LightShaft } from './LightShaft.tsx'
 import { markerForward, useSceneModel } from './model.ts'
 import { overviewStop, stopFromMarker, type CameraStop } from './rail.ts'
@@ -24,6 +25,15 @@ export interface ModelSceneConfig {
   skySun?: SkySun
   exposure?: number
   views?: Record<string, { position: [number, number, number]; target: [number, number, number] }>
+  lamps?: LampSettings
+  look?: { saturation: number; gain?: Rgb }
+  shaftStrength?: number
+}
+
+export interface LampSettings {
+  color: string
+  intensity: number
+  distance: number
 }
 
 const OVERVIEW_MARKER = 'vue-d-ensemble'
@@ -43,15 +53,20 @@ export function markerStop(markers: Map<string, Object3D>, id: string): CameraSt
 export function ModelScene({ config, scene, point, insets, quality }: SceneProps & { config: ModelSceneConfig }) {
   const shadows = QUALITY[quality].shadows || config.forceShadows === true
   const model = useSceneModel(config.model, shadows)
+  const lamps = config.lamps
   useFrame(({ clock }) => {
     WATER_TIME.value = clock.elapsedTime
   })
   useEffect(() => {
     SCENE_LOOK.exposure = config.exposure ?? 1
+    SCENE_LOOK.saturation = config.look?.saturation ?? 1
+    SCENE_LOOK.gain = config.look?.gain ?? [1, 1, 1]
     return () => {
       SCENE_LOOK.exposure = 1
+      SCENE_LOOK.saturation = 1
+      SCENE_LOOK.gain = [1, 1, 1]
     }
-  }, [config.exposure])
+  }, [config.exposure, config.look])
   const stops = useMemo<CameraStop[]>(() => {
     const viewStop = (id: string): CameraStop | null => {
       const view = config.views?.[id]
@@ -69,9 +84,14 @@ export function ModelScene({ config, scene, point, insets, quality }: SceneProps
       <Atmosphere sun={config.sun} haze={config.haze} shadows={shadows} shadowMapSize={QUALITY[quality].shadowMapSize} interior={config.interior} sky={config.sky} skySun={config.skySun} />
       <primitive object={model.root} />
       <Life model={model} quality={quality} shadows={shadows} />
+      {model.candles.length > 0 && <CandleGlow positions={model.candles} />}
       {model.anchors.has('oculus') && model.anchors.has('sunbeam_target') && (
-        <LightShaft from={model.anchors.get('oculus')!} to={model.anchors.get('sunbeam_target')!} radius={config.lightShaftRadius ?? 4} />
+        <LightShaft from={model.anchors.get('oculus')!} to={model.anchors.get('sunbeam_target')!} radius={config.lightShaftRadius ?? 4} strength={config.shaftStrength} />
       )}
+      {model.shafts.map((shaft, index) => (
+        <LightShaft key={index} from={shaft.from} to={shaft.to} radius={shaft.radius} strength={config.shaftStrength} />
+      ))}
+      {lamps && model.lamps.map((position, index) => <pointLight key={index} position={position} color={lamps.color} intensity={lamps.intensity} distance={lamps.distance} decay={2} />)}
       <GuidedRail stops={stops} index={point} insets={insets} />
     </>
   )

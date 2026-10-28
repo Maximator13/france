@@ -15,6 +15,7 @@ const YAW_LIMIT = 70
 const ZOOM_LIMITS = [0.35, 1.8] as const
 const EYE_HEIGHT = 1.7
 const TARGET_HEIGHT = 1.4
+const GROUND_AIM = -2
 const TIME_CONSTANT = 0.9
 const DRAG_SPEED = 0.25
 const MAX_ASPECT = 1.6
@@ -98,6 +99,8 @@ export function CameraRig({
   const goal = useMemo(() => ({ position: new Vector3(), target: new Vector3() }), [])
   const unitIndex = useMemo(() => new Map(battle.units.map((unit, index) => [unit.id, index])), [battle])
   const scratch = useMemo(() => ({}) as UnitState, [])
+  const camera = useThree((state) => state.camera)
+  const baseFov = useMemo(() => (camera as PerspectiveCamera).fov, [camera])
   useLookControls(element, look)
 
   useEffect(() => {
@@ -116,13 +119,25 @@ export function CameraRig({
       goal.target.set(fx, heightAt(field, fx, -fy), -fy)
       const aspect = Math.min(MAX_ASPECT, size.width / Math.max(1, size.height))
       const distance = (phase.span / (2 * Math.tan((camera.fov * DEGREES) / 2) * aspect)) * state.zoom
-      const heading = state.yaw * DEGREES
-      const tilt = state.tilt * DEGREES
+      const base = phase.view ?? { yaw: 0, tilt: TACTICAL_TILT }
+      const heading = (base.yaw + state.yaw) * DEGREES
+      const tilt = Math.max(TILT_LIMITS[0] * 0.5, Math.min(TILT_LIMITS[1], base.tilt + state.tilt - TACTICAL_TILT)) * DEGREES
       goal.position.set(
         fx - Math.sin(heading) * Math.cos(tilt) * distance,
         goal.target.y + Math.sin(tilt) * distance,
         -fy + Math.cos(heading) * Math.cos(tilt) * distance,
       )
+    } else if ('eye' in phase.ground) {
+      const view = phase.ground
+      const [ex, ey] = view.eye
+      const [tx, ty] = view.target
+      const turn = state.yaw * 0.6 * DEGREES
+      const dx = tx - ex
+      const dy = ty - ey
+      const rx = ex + dx * Math.cos(turn) + dy * Math.sin(turn)
+      const ry = ey - dx * Math.sin(turn) + dy * Math.cos(turn)
+      goal.position.set(ex, heightAt(field, ex, -ey) + (view.lift ?? EYE_HEIGHT), -ey)
+      goal.target.set(rx, heightAt(field, rx, -ry) + TARGET_HEIGHT - (state.tilt - TACTICAL_TILT) * 2, -ry)
     } else {
       const view = phase.ground
       const unit = stateAt(tracks[unitIndex.get(view.unit)!]!, time, scratch)
@@ -132,11 +147,13 @@ export function CameraRig({
       const ex = unit.x + forwardX * view.along + forwardY * view.across
       const ey = unit.y + forwardY * view.along - forwardX * view.across
       const heading = facing + ((view.turn ?? 0) + state.yaw * 0.6) * DEGREES
-      const tx = ex + Math.sin(heading) * view.look
-      const ty = ey + Math.cos(heading) * view.look
-      goal.position.set(ex, heightAt(field, ex, -ey) + EYE_HEIGHT, -ey)
-      goal.target.set(tx, heightAt(field, tx, -ty) + TARGET_HEIGHT - (state.tilt - TACTICAL_TILT) * 0.5, -ty)
+      const tx = unit.x + Math.sin(heading) * view.look
+      const ty = unit.y + Math.cos(heading) * view.look
+      goal.position.set(ex, heightAt(field, ex, -ey) + (view.lift ?? EYE_HEIGHT), -ey)
+      goal.target.set(tx, heightAt(field, tx, -ty) + GROUND_AIM - (state.tilt - TACTICAL_TILT) * 0.5, -ty)
     }
+    const fov = current === 'ground' && 'eye' in phase.ground && phase.ground.fov ? phase.ground.fov : baseFov
+    if (camera.fov !== fov) camera.fov = approach(camera.fov, fov, delta, TIME_CONSTANT)
     if (!pose.current || reducedMotion) pose.current = { position: goal.position.clone(), target: goal.target.clone() }
     const current3 = pose.current
     for (const axis of ['x', 'y', 'z'] as const) {
@@ -155,19 +172,20 @@ export function CameraRig({
     camera.updateProjectionMatrix()
   })
 
-  return <CameraRestore />
+  return <CameraRestore fov={baseFov} />
 }
 
-function CameraRestore() {
+function CameraRestore({ fov }: { fov: number }) {
   const camera = useThree((state) => state.camera)
   useEffect(
     () => () => {
       const perspective = camera as PerspectiveCamera
+      perspective.fov = fov
       perspective.near = MAP_NEAR
       perspective.far = MAP_FAR
       perspective.updateProjectionMatrix()
     },
-    [camera],
+    [camera, fov],
   )
   return null
 }

@@ -95,14 +95,19 @@ export function Atmosphere({
     if (!current) return
     current.intensity = sun.intensity * (1 - inside.current * (1 - (shadows ? 1 : (interior?.sunScale ?? 1))))
     const focus = focusRef.current
-    camera.getWorldDirection(focus)
-    const reach = Math.min(600, Math.max(40, camera.position.y * 1.5))
-    focus.multiplyScalar(reach).add(camera.position)
-    focus.y = 0
+    const fitted = interior !== undefined && inside.current > 0.5
+    if (fitted) {
+      focus.set(interior.center[0], 0, interior.center[2])
+    } else {
+      camera.getWorldDirection(focus)
+      const reach = Math.min(600, Math.max(40, camera.position.y * 1.5))
+      focus.multiplyScalar(reach).add(camera.position)
+      focus.y = 0
+    }
     current.position.copy(focus).addScaledVector(direction, SUN_DISTANCE)
     current.target.position.copy(focus)
     current.target.updateMatrixWorld()
-    const extent = Math.min(MAX_SHADOW_EXTENT, Math.max(MIN_SHADOW_EXTENT, camera.position.y * 1.2))
+    const extent = fitted ? interior.radius : Math.min(MAX_SHADOW_EXTENT, Math.max(MIN_SHADOW_EXTENT, camera.position.y * 1.2))
     const shadowCamera = current.shadow.camera
     if (shadowCamera.right !== extent) {
       shadowCamera.left = -extent

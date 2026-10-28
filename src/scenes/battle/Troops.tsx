@@ -133,7 +133,7 @@ export function Troops({
 
   useFrame(({ camera, clock }, delta) => {
     const { time, view } = useBattle.getState()
-    const goal = view === 'tactical' ? battle.tacticalScale : 1
+    const goal = view === 'tactical' ? battle.tacticalScale : (battle.groundScale ?? 1)
     scale.current = reducedMotion ? goal : approach(scale.current, goal, delta, SCALE_TIME_CONSTANT)
     const s = scale.current
     const seconds = reducedMotion ? 0 : clock.elapsedTime

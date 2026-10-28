@@ -36,7 +36,17 @@ function Effects({
   useFrame(() => {
     const { view, route } = useApp.getState()
     const base = gradingAt(view.center, eras)
-    grading.applyGrading(route.name === 'scene' ? { ...base, exposure: base.exposure * SCENE_EXPOSURE * SCENE_LOOK.exposure, saturation: base.saturation * SCENE_SATURATION } : base)
+    const gain = SCENE_LOOK.gain
+    grading.applyGrading(
+      route.name === 'scene'
+        ? {
+            ...base,
+            exposure: base.exposure * SCENE_EXPOSURE * SCENE_LOOK.exposure,
+            saturation: base.saturation * SCENE_SATURATION * SCENE_LOOK.saturation,
+            gain: [base.gain[0] * gain[0], base.gain[1] * gain[1], base.gain[2] * gain[2]],
+          }
+        : base,
+    )
   })
   return (
     <EffectComposer multisampling={multisampling} frameBufferType={halfFloat ? HalfFloatType : UnsignedByteType}>
