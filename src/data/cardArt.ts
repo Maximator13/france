@@ -3,10 +3,10 @@ import type { CardArt } from './schema.ts'
 export const cardArt: CardArt[] = [
   {
     "card": "clovis",
-    "title": "Clovis et le vase de Soissons, enluminure des Grandes Chroniques de France, Bibliothèque nationale de France",
+    "title": "Clovis et le vase de Soissons, Grandes Chroniques de France, Paris, BnF, Français 2610",
     "creator": "Enlumineur anonyme",
     "license": "Domaine public",
-    "date": "XIVe ou XVe siècle",
+    "date": "XVe siècle",
     "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/deed.fr",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clovis_Ier_et_le_vase_de_Soissons.jpg"
   },
@@ -105,7 +105,7 @@ export const cardArt: CardArt[] = [
     "title": "Mosaïque de l'arche d'alliance, abside de l'oratoire carolingien de Germigny-des-Prés",
     "creator": "Mosaïste carolingien ; photo : GFreihalter",
     "license": "CC BY-SA 3.0",
-    "date": "vers 806 (photo 2019)",
+    "date": "début du IXe siècle (photo 2019)",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.fr",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Germigny-des-Pr%C3%A9s_%C3%89glise_de_la_Tr%C3%A8s-Sainte-Trinit%C3%A9_Mosa%C3%AFque_908.jpg"
   },
@@ -121,9 +121,9 @@ export const cardArt: CardArt[] = [
   {
     "card": "sainte-ampoule",
     "title": "Reliquaire de la Sainte Ampoule, trésor du palais du Tau, Reims",
-    "creator": "Jean-Charles Cahier ; photo : Tangopaso",
+    "creator": "Atelier de Jean-Charles Cahier ; photo : Tangopaso",
     "license": "Domaine public",
-    "date": "1823 (photo 2013)",
+    "date": "vers 1820 (photo 2013)",
     "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/deed.fr",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Palais_du_Tau_-_Reliquaire_de_la_Sainte-Ampoule.jpg"
   },
@@ -141,7 +141,7 @@ export const cardArt: CardArt[] = [
     "title": "Épée du sacre des rois de France, dite Joyeuse, musée du Louvre, département des Objets d'art, MS 84",
     "creator": "Orfèvres anonymes ; photo : Shonagon",
     "license": "CC0 1.0",
-    "date": "Xe au XIIIe siècle (photo 2022)",
+    "date": "Xe au XIVe siècle, lame moderne (photo 2022)",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.fr",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:%C3%89p%C3%A9e_du_sacre_des_rois_de_France,_dite_Joyeuse_-_Mus%C3%A9e_du_Louvre_Objets_d%27art_MS_84.jpg"
   },
@@ -168,7 +168,7 @@ export const cardArt: CardArt[] = [
     "title": "Les serments de Strasbourg dans l'Histoire des fils de Louis le Pieux de Nithard, Bibliothèque nationale de France, ms. latin 9768, fol. 13",
     "creator": "Copiste anonyme",
     "license": "Domaine public",
-    "date": "fin du Xe siècle",
+    "date": "fin du Xe ou début du XIe siècle",
     "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/deed.fr",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nithardus,_De_dissensionibus_filiorum_Hludovici_Pii_libri_quatuor_(1-18r)._Flodoardus_Remensis,Annales_(19v-46v)._-_btv1b84238417_(029_of_104).jpg"
   },
@@ -312,13 +312,13 @@ export const cardArt: CardArt[] = [
     "title": "Vase d'Aliénor, cristal de roche monté en orfèvrerie, Paris, musée du Louvre, MR 340",
     "creator": "Orfèvre anonyme ; photo : Shonagon",
     "license": "CC0 1.0",
-    "date": "VIe ou VIIe siècle pour le cristal, vers 1137 à 1147 pour la monture (photo 2023)",
+    "date": "VIe ou VIIe siècle pour le cristal, avant 1147 pour la monture (photo 2023)",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.fr",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vase_d'Ali%C3%A9nor_-_Mus%C3%A9e_du_Louvre_Objets_d'Art_MR_340.jpg"
   },
   {
     "card": "sceau-de-majeste",
-    "title": "Premier sceau de majesté de Louis IX, empreinte exposée",
+    "title": "Premier sceau de majesté de Louis IX, moulage exposé",
     "creator": "Atelier royal ; photo : Tangopaso",
     "license": "Domaine public",
     "date": "1226 (photo 2015)",
@@ -336,7 +336,7 @@ export const cardArt: CardArt[] = [
   },
   {
     "card": "croises-de-jerusalem",
-    "title": "Godefroy de Bouillon dans sa tour de siège à l'assaut de Jérusalem, Roman de Godefroy de Bouillon, Paris, BnF, Français 22495",
+    "title": "Godefroy de Bouillon dans sa tour de siège à l'assaut de Jérusalem, Roman de Godefroy de Bouillon, Paris, BnF, Français 22495, fol. 69v",
     "creator": "Maître du Roman de Fauvel",
     "license": "Domaine public",
     "date": "1337",
@@ -390,10 +390,10 @@ export const cardArt: CardArt[] = [
   },
   {
     "card": "bertrand-du-guesclin",
-    "title": "Charles V remet l'épée de connétable à Bertrand du Guesclin, enluminure des Grandes Chroniques de France, Paris, BnF",
+    "title": "Charles V remet l'épée de connétable à Bertrand du Guesclin, Grandes Chroniques de France, Paris, BnF, Français 6465, fol. 434v",
     "creator": "Jean Fouquet",
     "license": "Domaine public",
-    "date": "vers 1455-1460",
+    "date": "vers 1455 à 1460",
     "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/deed.fr",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jean_Fouquet_-_Remise_de_l'%C3%A9p%C3%A9e_de_connetable_%C3%A0_Bertrand_Duguesclin_-_Enluminure_(XVe_si%C3%A8cle).jpg"
   },
@@ -507,10 +507,10 @@ export const cardArt: CardArt[] = [
   },
   {
     "card": "archers-anglais",
-    "title": "La bataille de Crécy, enluminure des Chroniques de Jean Froissart, Paris, BnF, ms. français 2643",
+    "title": "La bataille de Crécy, enluminure des Chroniques de Jean Froissart, Paris, BnF, ms. français 2643, fol. 165v",
     "creator": "Attribué à Loyset Liédet",
     "license": "Domaine public",
-    "date": "XVe siècle",
+    "date": "vers 1470 à 1475",
     "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/deed.fr",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Battle_of_crecy_froissart.jpg"
   },
@@ -669,8 +669,8 @@ export const cardArt: CardArt[] = [
   },
   {
     "card": "couronne-de-louis-xv",
-    "title": "Couronne du sacre de Louis XV (pierres d'origine remplacées par des copies), galerie d'Apollon, musée du Louvre, Paris",
-    "creator": "Laurent Rondé et Augustin Duflos ; photo : Wilfredor",
+    "title": "Couronne personnelle de Louis XV (pierres d'origine remplacées par des copies), galerie d'Apollon, musée du Louvre, Paris",
+    "creator": "Claude Rondé (dessin) et Augustin Duflos (orfèvre) ; photo : Wilfredor",
     "license": "CC0 1.0",
     "date": "1722 ; photo de 2024",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.fr",
@@ -687,21 +687,21 @@ export const cardArt: CardArt[] = [
   },
   {
     "card": "mousquetaires-du-roi",
-    "title": "Mousquetaires de la maison du roi en 1663, planche de costumes militaires",
-    "creator": "Gustave David",
-    "license": "Domaine public",
-    "date": "Vers 1830 à 1860",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/deed.fr",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:1663-Louis-XIV_-Maison-Du-Roi_-Mousquetaires.jpg"
+    "title": "Mousquetaire de la première compagnie en soubreveste à croix, huile sur toile, musée de l'Armée, Paris",
+    "creator": "Peintre anonyme ; photo : Clemens August von Bayern",
+    "license": "CC BY-SA 4.0",
+    "date": "vers 1745 à 1750 ; photo 2013",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.fr",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Musketeer_of_the_first_company,_ca._1745-50.jpg"
   },
   {
     "card": "gardes-francaises",
-    "title": "Entrée d'un régiment des gardes françaises sous Louis XV, dessin, musée Carnavalet, Paris",
-    "creator": "Dumas",
-    "license": "CC0 1.0",
-    "date": "Entre 1750 et 1774",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.fr",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Entr%C3%A9e_d%27un_r%C3%A9giment_de_gardes_fran%C3%A7aises_sous_Louis_XV,_D.7655.jpg"
+    "title": "Grenadier du régiment des Gardes françaises, estampe coloriée du recueil Réunion de gardes suisses et gardes françaises de 1780, Bibliothèque nationale de France",
+    "creator": "Nicolaus Hoffmann",
+    "license": "Domaine public",
+    "date": "1780",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/deed.fr",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:R%C3%A9union_de_gardes_suisses_et_gardes_fran%C3%A7aises_de_1780_-_estampe_-_par_Hoffmann_-_btv1b10507318k_(30_of_34).jpg"
   },
   {
     "card": "encyclopedie",
@@ -741,10 +741,10 @@ export const cardArt: CardArt[] = [
   },
   {
     "card": "louis-xvi",
-    "title": "Portrait de Louis XVI, dessin, Paris, musée Carnavalet",
+    "title": "Portrait de Louis XVI, dessin, Paris, musée Carnavalet (D.7108)",
     "creator": "Joseph Ducreux",
     "license": "Domaine public",
-    "date": "fin 1792 ou début 1793",
+    "date": "fin 1792 ou début 1793 (selon la tradition)",
     "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/deed.fr",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Louis_XVI_(1754-1793)_M.jpg"
   },
@@ -769,9 +769,9 @@ export const cardArt: CardArt[] = [
   {
     "card": "mirabeau",
     "title": "Portrait de Mirabeau, huile sur toile, Paris, musée Carnavalet",
-    "creator": "Joseph Boze",
+    "creator": "Attribué à Joseph Boze",
     "license": "Domaine public",
-    "date": "1795",
+    "date": "vers 1795",
     "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/deed.fr",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Joseph_Boze_-_Portrait_d%27Honor%C3%A9_Gabriel_Riqueti,_comte_de_Mirabeau_(1749-1791),_orateur_et_homme_politique_-_P1506_-_Mus%C3%A9e_Carnavalet.jpg"
   },
@@ -823,9 +823,9 @@ export const cardArt: CardArt[] = [
   {
     "card": "serment-du-jeu-de-paume",
     "title": "Le Serment du Jeu de paume, le 20 juin 1789, huile sur toile, Paris, musée Carnavalet (détail)",
-    "creator": "Jacques-Louis David",
+    "creator": "D'après Jacques-Louis David",
     "license": "CC0 1.0",
-    "date": "vers 1790 à 1791",
+    "date": "après 1791",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.fr",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jacques-Louis_David_-_Serment_du_Jeu_de_paume,_le_20_juin_1789_-_P67_-_Mus%C3%A9e_Carnavalet_-_2.jpg"
   },
@@ -840,7 +840,7 @@ export const cardArt: CardArt[] = [
   },
   {
     "card": "tuileries-10-aout",
-    "title": "La Journée du 10 août 1792 : prise du palais des Tuileries, huile sur toile, Versailles, musée national du château",
+    "title": "La Journée du 10 août 1792 : prise du palais des Tuileries, huile sur toile, Versailles, musée national du château (MV 5182)",
     "creator": "Jacques Bertaux",
     "license": "Domaine public",
     "date": "1793",
@@ -912,7 +912,7 @@ export const cardArt: CardArt[] = [
   },
   {
     "card": "josephine-de-beauharnais",
-    "title": "L'impératrice Joséphine en costume du sacre, château de Fontainebleau",
+    "title": "L'impératrice Joséphine en costume du sacre, château de Fontainebleau (N 18)",
     "creator": "François Gérard",
     "license": "Domaine public",
     "date": "1807 à 1808",
@@ -933,7 +933,7 @@ export const cardArt: CardArt[] = [
     "title": "Portrait du maréchal Michel Ney, duc d'Elchingen, collection particulière",
     "creator": "François Gérard",
     "license": "Domaine public",
-    "date": "vers 1805",
+    "date": "entre 1805 et 1812",
     "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/deed.fr",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marechal_Ney.jpg"
   },
@@ -1038,12 +1038,12 @@ export const cardArt: CardArt[] = [
   },
   {
     "card": "aigle-de-regiment",
-    "title": "Serment de l'armée fait à l'Empereur après la distribution des aigles, 5 décembre 1804, château de Versailles",
-    "creator": "Jacques-Louis David",
-    "license": "Domaine public",
-    "date": "1810",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/deed.fr",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jacques_Louis_David_-_Serment_de_l%27arm%C3%A9e_fait_%C3%A0_l%27Empereur_apr%C3%A8s_la_distribution_des_aigles,_5_d%C3%A9cembre_1804_-_Google_Art_Project.jpg"
+    "title": "Aigle du 62e régiment d'infanterie de ligne, prise par le 44e régiment britannique à la bataille des Arapiles (Salamanque) en 1812, Essex Regiment Museum, Chelmsford",
+    "creator": "Modèle d'Antoine-Denis Chaudet, fonte de Pierre-Philippe Thomire ; photo : Geni",
+    "license": "CC BY-SA 4.0",
+    "date": "1804 ; photo 2025",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.fr",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Salamanca_Eagle_East_Essex_Regiment.JPG"
   },
   {
     "card": "garde-imperiale",

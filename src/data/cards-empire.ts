@@ -65,7 +65,7 @@ export const cards: Card[] = [
     rarity: 'rare',
     year: 1815,
     text: "Général britannique aguerri en Inde, il chasse les Français de la péninsule Ibérique de 1808 à 1814. Le 18 juin 1815, il tient le plateau de Mont-Saint-Jean contre Napoléon jusqu'à l'arrivée décisive des Prussiens de Blücher.",
-    sources: [primary('Arthur Wellesley, duc de Wellington', WELLINGTON_DISPATCHES, 'XII, dépêche du 19 juin 1815'), modern('Rory Muir', 'Wellington, New Haven, Yale University Press, 2013 et 2015')],
+    sources: [primary('Arthur Wellesley, duc de Wellington', WELLINGTON_DISPATCHES, 'XII (1838), p. 478, dépêche du 19 juin 1815'), modern('Rory Muir', 'Wellington, New Haven, Yale University Press, 2013 et 2015')],
   },
   {
     id: 'davout',
@@ -116,7 +116,7 @@ export const cards: Card[] = [
     rarity: 'rare',
     year: 1815,
     text: "Au sud de Waterloo, l'armée de Napoléon s'use tout l'après-midi contre les lignes de Wellington, tandis que les Prussiens de Blücher frappent son flanc à Plancenoit. Le soir, l'échec de la Garde tourne à la déroute.",
-    sources: [primary('Arthur Wellesley, duc de Wellington', WELLINGTON_DISPATCHES, 'XII, dépêche du 19 juin 1815'), modern('Thierry Lentz', 'Waterloo 1815, Paris, Perrin, 2015')],
+    sources: [primary('Arthur Wellesley, duc de Wellington', WELLINGTON_DISPATCHES, 'XII (1838), p. 478, dépêche du 19 juin 1815'), modern('Thierry Lentz', 'Waterloo 1815, Paris, Perrin, 2015')],
   },
   {
     id: 'longwood-house',

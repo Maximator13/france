@@ -15,7 +15,7 @@ const VITA_KAROLI = 'Vie de Charlemagne'
 const ROUCHE = modern('Michel Rouche', 'Clovis, Paris, Fayard, 1996')
 const LE_JAN = modern('Régine Le Jan', 'Les Mérovingiens, Paris, PUF, 2006')
 const RICHE = modern('Pierre Riché', "Les Carolingiens : une famille qui fit l'Europe, Paris, Hachette, 1983")
-const HEITZ = modern('Carol Heitz', "L'Architecture religieuse carolingienne, Paris, Picard, 1980")
+const HEITZ = modern('Carol Heitz', "L'Architecture religieuse carolingienne : les formes et leurs fonctions, Paris, Picard, 1980")
 const HUBERT = modern('Jean Hubert', "L'Art préroman, Paris, Éditions d'art et d'histoire, 1938")
 
 export const cards: Card[] = [
@@ -46,8 +46,8 @@ export const cards: Card[] = [
     subtitle: 'Maire du palais, vainqueur de Poitiers',
     rarity: 'epic',
     year: 732,
-    text: "Maître du royaume franc sous des rois mérovingiens sans pouvoir, il arrête en 732, entre Tours et Poitiers, l'armée de l'émir Abd al-Rahman, tué dans la bataille. Le surnom de Martel, le marteau, n'apparaît qu'au IXe siècle.",
-    sources: [primary('Continuateurs de Frédégaire', 'Chronique', '13'), primary('Anonyme', 'Chronique mozarabe de 754'), RICHE],
+    text: "Maître du royaume franc sous des rois mérovingiens sans pouvoir, il arrête en 732, entre Tours et Poitiers, l'armée de l'émir Abd al-Rahman, tué dans la bataille. Le surnom de Martel, le marteau, n'apparaît que vers 875, chez le moine Adrevald de Fleury.",
+    sources: [primary('Continuateurs de Frédégaire', 'Chronique', '13'), primary('Anonyme', 'Chronique mozarabe de 754'), primary('Adrevald de Fleury', 'Miracles de saint Benoît'), RICHE],
   },
   {
     id: 'pepin-le-bref',
@@ -139,9 +139,9 @@ export const cards: Card[] = [
     name: 'Oratoire de Germigny',
     subtitle: "Oratoire de Théodulf, évêque d'Orléans",
     rarity: 'common',
-    year: 806,
-    text: "Théodulf, évêque d'Orléans et proche de Charlemagne, fait bâtir cet oratoire près de sa villa, consacré en 806. Son abside garde une mosaïque d'or : deux chérubins penchés sur l'arche d'alliance, seule mosaïque carolingienne conservée en France.",
-    sources: [primary('Anonyme', 'Inscription de dédicace de Germigny-des-Prés', '806'), HEITZ],
+    year: 803,
+    text: "Théodulf, évêque d'Orléans, fait bâtir près de sa villa, au début du IXe siècle, cet oratoire. Son abside garde une mosaïque d'or : deux chérubins penchés sur l'arche d'alliance, seule mosaïque carolingienne conservée en France.",
+    sources: [modern('Cécile Treffort', "« Entre vrai et faux : les inscriptions de Germigny-des-Prés », Bulletin du centre d'études médiévales d'Auxerre, hors-série 11, 2019"), HEITZ],
   },
   {
     id: 'cryptes-de-jouarre',
@@ -150,8 +150,8 @@ export const cards: Card[] = [
     name: 'Cryptes de Jouarre',
     subtitle: 'Nécropole mérovingienne',
     rarity: 'common',
-    year: 630,
-    text: "Fondée vers 630 par Adon, frère de saint Ouen, l'abbaye de Jouarre garde dans ses cryptes les sarcophages de ses premières abbesses. Celui de Théodechilde, sculpté de rangées de coquilles, est un chef-d'œuvre de la fin du VIIe siècle.",
+    year: 635,
+    text: "Fondée vers 635 par Adon, frère de saint Ouen, l'abbaye de Jouarre garde dans ses cryptes les sarcophages de ses premières abbesses. Celui de Théodechilde, sculpté de rangées de coquilles, est un chef-d'œuvre de la fin du VIIe siècle.",
     sources: [HUBERT, LE_JAN],
   },
   {
@@ -181,7 +181,7 @@ export const cards: Card[] = [
     subtitle: 'Épée du sacre, dite de Charlemagne',
     rarity: 'uncommon',
     year: 814,
-    text: "La Chanson de Roland donne à l'épée de Charlemagne le nom de Joyeuse. L'épée du sacre gardée à Saint-Denis, aujourd'hui au Louvre, porte ce nom, mais elle mêle des pièces du Xe au XIIIe siècle : aucune n'a sans doute appartenu à l'empereur.",
+    text: "La Chanson de Roland nomme Joyeuse l'épée de Charlemagne. L'épée du sacre gardée à Saint-Denis, aujourd'hui au Louvre, porte ce nom, mais sa garde associe des pièces du Xe au XIVe siècle, sur une lame très reprise : aucune n'a appartenu à l'empereur.",
     sources: [primary('Anonyme', 'La Chanson de Roland'), modern('Danielle Gaborit-Chopin', 'Regalia : les instruments du sacre des rois de France, Paris, RMN, 1987')],
   },
   {

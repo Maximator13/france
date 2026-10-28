@@ -167,7 +167,7 @@ export const cards: Card[] = [
     subtitle: 'Cristal de roche du trésor de Saint-Denis',
     rarity: 'common',
     year: 1137,
-    text: "Taillé dans le cristal de roche, sans doute en Perse vers le VIe siècle, ce vase est offert par Aliénor à Louis VII lors de leur mariage. Le roi le donne à Suger, qui le fait monter en orfèvrerie pour Saint-Denis ; il est conservé au Louvre.",
+    text: "Taillé dans le cristal de roche, sans doute en Perse au VIe ou au VIIe siècle, ce vase est offert par Aliénor à Louis VII lors de leur mariage. Le roi le donne à Suger, qui le fait monter en orfèvrerie pour Saint-Denis ; il est conservé au Louvre.",
     sources: [primary('Suger', "L'Œuvre administrative"), modern('Danielle Gaborit-Chopin (dir.)', 'Le Trésor de Saint-Denis, Paris, Réunion des musées nationaux, 1991')],
   },
   {
@@ -218,6 +218,6 @@ export const cards: Card[] = [
     rarity: 'uncommon',
     year: 1100,
     text: "Composé vers 1100, le poème chante la mort de Roland, neveu de Charlemagne, à Roncevaux, où l'arrière-garde franque fut réellement détruite en 778. Les Sarrasins de la chanson y remplacent les Basques de l'histoire ; le plus ancien manuscrit est à Oxford.",
-    sources: [primary('Anonyme', 'La Chanson de Roland', 'laisses 168 à 176'), primary('Éginhard', 'Vie de Charlemagne', '9'), modern('Ian Short (éd.)', 'La Chanson de Roland, Paris, Le Livre de Poche, 1990')],
+    sources: [primary('Anonyme', 'La Chanson de Roland', 'laisses 168 à 176, v. 2259 à 2396'), primary('Éginhard', 'Vie de Charlemagne', '9'), modern('Ian Short (éd.)', 'La Chanson de Roland, Paris, Le Livre de Poche, 1990')],
   },
 ]

@@ -137,7 +137,7 @@ export const cards: Card[] = [
     subtitle: 'Forteresse de Charles V',
     rarity: 'common',
     year: 1370,
-    text: "Haut de 52 mètres, c'est le plus haut donjon médiéval d'Europe. Commencé sous Philippe VI vers 1337, il est achevé par Charles V vers 1370, qui en fait une résidence sûre où il garde une partie de son trésor.",
+    text: "Haut de 52 mètres, c'est le plus haut donjon médiéval d'Europe. Fondé sous Philippe VI vers 1337, élevé à partir de 1361, il est achevé par Charles V vers 1370, qui en fait une résidence sûre où il garde une partie de son trésor.",
     sources: [modern('Jean Chapelot', 'Le Château de Vincennes, une résidence royale au Moyen Âge, Paris, CNRS Éditions, 1994')],
   },
   {
@@ -159,7 +159,7 @@ export const cards: Card[] = [
     rarity: 'uncommon',
     year: 1360,
     text: "Frappé à partir de décembre 1360 pour payer la rançon de Jean le Bon, pris par les Anglais à Poitiers en 1356, il montre le roi armé au galop. Son nom viendrait de la légende Francorum rex ou du roi enfin libre : le débat reste ouvert.",
-    sources: [primary('Jean II', 'Ordonnance de Compiègne', '5 décembre 1360'), modern('Jean Lafaurie', 'Les Monnaies des rois de France, Paris, Bourgey, 1951')],
+    sources: [primary('Jean II', 'Ordonnance de Compiègne', '5 décembre 1360'), modern('Jean Lafaurie', 'Les Monnaies des rois de France, t. I, Hugues Capet à Louis XII, Paris, Bourgey, 1951')],
   },
   {
     id: 'ordre-de-saint-michel',

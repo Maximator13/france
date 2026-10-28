@@ -148,7 +148,7 @@ export const cards: Card[] = [
     rarity: 'common',
     year: 1681,
     text: "Conçu par Pierre-Paul Riquet et soutenu par Colbert, il relie Toulouse à l'étang de Thau et, avec la Garonne, l'Atlantique à la Méditerranée. Il est mis en eau en 1681, quelques mois après la mort de Riquet.",
-    sources: [modern('Jean-Denis Bergasse (dir.)', 'Le Canal du Midi, Cessenon, 1982 à 1985')],
+    sources: [modern('Jean-Denis Bergasse (dir.)', 'Le Canal du Midi, 4 vol., Cessenon, J.-D. Bergasse, 1982 à 1985')],
   },
   {
     id: 'diamant-regent',
@@ -178,7 +178,7 @@ export const cards: Card[] = [
     rarity: 'common',
     year: 1640,
     text: "Créé par la réforme monétaire de Louis XIII en 1640, le louis d'or porte le profil du roi gravé par Jean Warin. Pièce d'environ 6,75 grammes d'or, il reste la grande monnaie d'or du royaume jusqu'à la Révolution.",
-    sources: [modern('Jean Duplessy', 'Les Monnaies françaises royales de Hugues Capet à Louis XVI, Paris et Maastricht, Platt et Florange, 1988 et 1989')],
+    sources: [modern('Jean Duplessy', 'Les Monnaies françaises royales de Hugues Capet à Louis XVI, Paris, Maison Platt, 1988 et 1989')],
   },
   {
     id: 'mousquetaires-du-roi',

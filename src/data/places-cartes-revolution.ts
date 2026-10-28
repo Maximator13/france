@@ -10,8 +10,9 @@ export const places: Place[] = [
   {
     "id": "valmy",
     "name": "Valmy (Marne)",
-    "lat": 49.0817,
-    "lon": 4.7658
+    "lat": 49.0844,
+    "lon": 4.7736,
+    "wikidataId": "Q1060595"
   },
   {
     "id": "palais-des-tuileries",
